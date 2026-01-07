@@ -171,12 +171,12 @@ function App() {
 
       {/* ABOUT SECTION */}
       <section id="about" className="py-24 px-4 bg-white">
-        <div className="container mx-auto max-w-5xl">
-          <div className="flex flex-col md:flex-row items-center gap-12">
+        <div className="container mx-auto max-w-6xl">
+          <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
             
             {/* Left Side: Profile Picture */}
-            <div className="flex-shrink-0">
-              <div className="relative h-64 w-64 overflow-hidden rounded-full border-4 border-white shadow-2xl ring-1 ring-gray-100">
+            <div className="w-full md:w-1/2 flex justify-center md:justify-end">
+              <div className="relative aspect-[3/4] w-full max-w-xs overflow-hidden rounded-2xl shadow-2xl ring-1 ring-gray-100">
                 <img 
                   src="/thayika-profile-picture.png" 
                   alt="Thayika Petchnui" 
@@ -186,7 +186,7 @@ function App() {
             </div>
 
             {/* Right Side: Information */}
-            <div className="text-center md:text-left">
+            <div className="w-full md:w-1/2 text-center md:text-left">
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">About Me</h2>
 
               <div className="prose prose-lg text-gray-600 space-y-6">
