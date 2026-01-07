@@ -287,6 +287,12 @@ function App() {
             {/* Right Side: Information */}
             <div className="w-full md:w-1/2 text-center md:text-left">
               <FadeIn>
+                <div className="inline-flex items-center rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs font-medium text-gray-600 mb-6">
+                  <span className="flex h-2 w-2 rounded-full bg-blue-500 mr-2"></span>
+                  Available for Freelance
+                </div>
+              </FadeIn>
+              <FadeIn delay={100}>
                 <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">About Me</h2>
               </FadeIn>
 
