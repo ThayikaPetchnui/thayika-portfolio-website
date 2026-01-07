@@ -4,10 +4,10 @@ import { ArrowRight, Box } from "lucide-react";
 
 // Mock Data for your Substance Painter Renders
 const ARTWORKS = [
-  { id: 1, title: "Cyberpunk Helmet", category: "Hard Surface", url: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop" },
-  { id: 2, title: "Antique Radio", category: "Props", url: "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=1000&auto=format&fit=crop" },
-  { id: 3, title: "Sci-Fi Material", category: "Texture", url: "https://images.unsplash.com/photo-1614728853911-79e19cc17a94?q=80&w=1000&auto=format&fit=crop" },
-  { id: 4, title: "Leather Armor", category: "Character", url: "https://images.unsplash.com/photo-1615672917615-5143a593454b?q=80&w=1000&auto=format&fit=crop" },
+  { id: 1, title: "Arctic Digital AK47", category: "Weapon Skin", url: "/assets/AK47_ArcticDigital3.png" },
+  { id: 2, title: "Desert Camo AK47", category: "Weapon Skin", url: "/assets/AK47_Desert.png" },
+  { id: 3, title: "Woodland Stripe AK47", category: "Weapon Skin", url: "/assets/AK47_WoodlandStripe1.png" },
+  { id: 4, title: "Desert Yellow AK47", category: "Weapon Skin", url: "/assets/AK47_Desert_Yellow.png" },
 ];
 
 function App() {
