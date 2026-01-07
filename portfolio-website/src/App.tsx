@@ -233,16 +233,26 @@ function App() {
             <div className="w-full md:w-1/2 text-center md:text-left">
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">About Me</h2>
 
-              <div className="prose prose-lg text-gray-600 space-y-6">
+              <div className="prose prose-lg text-gray-600 space-y-6 mb-10">
                 <p className="text-xl md:text-2xl leading-relaxed font-medium text-gray-900">
-                  I'm Thayika, a <span className="font-bold">3D Artist</span> based in Thailand specializing in <span className="font-bold">photorealistic texturing</span> and <span className="font-bold">material creation</span>.
+                  I'm Thayika, a <span className="font-bold">Texture Artist</span> based in Thailand specializing in <span className="font-bold">photorealistic texturing</span> and <span className="font-bold">material creation</span>.
                 </p>
                 <p className="text-lg leading-relaxed text-gray-500">
-                  With a keen eye for detail and a passion for digital craftsmanship, I transform 3D models into lifelike assets that tell a story. My workflow centers around <span className="inline-flex items-center font-bold text-gray-900"><span className="mr-1.5 flex h-5 w-5 items-center justify-center rounded-md bg-[#F3A63E] text-[10px] font-extrabold text-[#111] shadow-sm select-none">Pt</span>Substance Painter</span> and modern <span className="font-bold text-gray-900">PBR pipelines</span>, ensuring high-quality results optimized for games and real-time rendering.
+                  I specialize exclusively in the texturing phase of production. <span className="font-bold text-gray-900">I do not create 3D models.</span> Instead, I focus on transforming provided models into lifelike assets using <span className="font-bold text-gray-900">Substance Painter</span> for modern PBR workflows, ensuring high-quality results optimized for games and real-time rendering.
                 </p>
                 <p className="text-lg leading-relaxed text-gray-500">
                   I am constantly exploring new technologies to push the boundaries of my artistic capabilities and am currently available for freelance opportunities.
                 </p>
+              </div>
+
+              {/* Green Substance Painter Icon */}
+              <div className="flex justify-center md:justify-start">
+                <div className="group flex flex-col items-center gap-3">
+                  <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-[#0CCE6B] text-[#111] shadow-xl shadow-green-200/50 transition-all duration-300 group-hover:scale-105 group-hover:shadow-green-300/50">
+                    <span className="text-3xl font-extrabold tracking-tight select-none">Pt</span>
+                  </div>
+                  <span className="text-sm font-semibold text-gray-400 uppercase tracking-wider">Substance Painter</span>
+                </div>
               </div>
             </div>
           </div>
