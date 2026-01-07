@@ -41,7 +41,7 @@ function App() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   useEffect(() => {
-    document.title = "Thayika Petchnui - Portfolio";
+    document.title = "Thayika - Portfolio";
   }, []);
 
   return (
@@ -179,7 +179,7 @@ function App() {
               <div className="relative aspect-[3/4] w-full max-w-xs overflow-hidden rounded-2xl shadow-2xl ring-1 ring-gray-100">
                 <img 
                   src="/thayika-profile-picture.png" 
-                  alt="Thayika Petchnui" 
+                  alt="Thayika" 
                   className="h-full w-full object-cover"
                 />
               </div>
@@ -191,7 +191,7 @@ function App() {
 
               <div className="prose prose-lg text-gray-600 space-y-6">
                 <p className="text-xl md:text-2xl leading-relaxed font-medium text-gray-900">
-                  I'm Thayika Petchnui, a 3D Artist based in Thailand specializing in photorealistic texturing and material creation.
+                  I'm Thayika, a 3D Artist based in Thailand specializing in photorealistic texturing and material creation.
                 </p>
                 <p className="text-lg leading-relaxed text-gray-500">
                   With a keen eye for detail and a passion for digital craftsmanship, I transform 3D models into lifelike assets that tell a story. My workflow centers around Substance Painter and modern PBR pipelines, ensuring high-quality results optimized for games and real-time rendering.
@@ -227,7 +227,7 @@ function App() {
       {/* FOOTER */}
       <footer className="py-12 border-t border-gray-100">
         <div className="container mx-auto px-4 text-center text-gray-400 text-sm">
-          <p>© 2026 Thayika Petchnui.</p>
+          <p>© 2026 Thayika.</p>
         </div>
       </footer>
     </div>
