@@ -29,6 +29,37 @@ const FadeIn = ({ children, delay = 0, className = "" }: { children: ReactNode, 
   );
 };
 
+// Text reveal animation component (slides up from masked bottom)
+const TextReveal = ({ children, delay = 0, className = "" }: { children: ReactNode, delay?: number, className?: string }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => { if (ref.current) observer.unobserve(ref.current); };
+  }, []);
+
+  return (
+    <div ref={ref} className={`overflow-hidden ${className}`}>
+      <div 
+        className={`transition-transform duration-1000 ease-out transform ${isVisible ? "translate-y-0" : "translate-y-full"}`} 
+        style={{ transitionDelay: `${delay}ms` }}
+      >
+        {children}
+      </div>
+    </div>
+  );
+};
+
 // Featured assets for the main view
 const FEATURED_ARTWORKS = [
   { id: 101, title: "Neon Dragon", category: "Featured Skin", url: "/assets/featured/AK47_NeonDragon.png" },
@@ -113,11 +144,11 @@ function App() {
               Available for Freelance
             </div>
           </FadeIn>
-          <FadeIn delay={200}>
-            <h1 className="text-5xl md:text-7xl font-semibold tracking-tighter mb-6 bg-gradient-to-b from-black to-black/70 bg-clip-text text-transparent">
+          <TextReveal delay={200} className="mb-6">
+            <h1 className="text-5xl md:text-7xl font-semibold tracking-tighter bg-gradient-to-b from-black to-black/70 bg-clip-text text-transparent pb-1">
               Digital craftsmanship.
             </h1>
-          </FadeIn>
+          </TextReveal>
           <FadeIn delay={400}>
             <p className="text-xl text-gray-500 md:text-2xl max-w-2xl mx-auto mb-10 leading-relaxed">
               Specialized in photorealistic texturing and material creation using Substance Painter.
