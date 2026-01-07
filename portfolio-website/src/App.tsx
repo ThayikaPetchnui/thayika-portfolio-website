@@ -1,7 +1,33 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, type ReactNode } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Box, Mail, X, ChevronLeft, ChevronRight } from "lucide-react";
+
+// Simple fade-in animation component
+const FadeIn = ({ children, delay = 0, className = "" }: { children: ReactNode, delay?: number, className?: string }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1, rootMargin: "50px" }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => { if (ref.current) observer.unobserve(ref.current); };
+  }, []);
+
+  return (
+    <div ref={ref} className={`transition-all duration-1000 ease-out transform ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"} ${className}`} style={{ transitionDelay: `${delay}ms` }}>
+      {children}
+    </div>
+  );
+};
 
 // Featured assets for the main view
 const FEATURED_ARTWORKS = [
@@ -76,24 +102,32 @@ function App() {
       {/* HERO SECTION */}
       <section className="pt-32 pb-20 md:pt-48 md:pb-32 px-4">
         <div className="container mx-auto max-w-4xl text-center">
-          <div className="inline-flex items-center rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs font-medium text-gray-600 mb-6">
-            <span className="flex h-2 w-2 rounded-full bg-blue-500 mr-2"></span>
-            Available for Freelance
-          </div>
-          <h1 className="text-5xl md:text-7xl font-semibold tracking-tighter mb-6 bg-gradient-to-b from-black to-black/70 bg-clip-text text-transparent">
-            Digital craftsmanship.
-          </h1>
-          <p className="text-xl text-gray-500 md:text-2xl max-w-2xl mx-auto mb-10 leading-relaxed">
-            Specialized in photorealistic texturing and material creation using Substance Painter.
-          </p>
-          <div className="flex justify-center gap-4">
-            <Button size="lg" className="rounded-full text-base" asChild>
-              <a href="#work">View Projects</a>
-            </Button>
-            <Button size="lg" variant="outline" className="rounded-full text-base" asChild>
-              <a href="#contact">Contact Me</a>
-            </Button>
-          </div>
+          <FadeIn>
+            <div className="inline-flex items-center rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs font-medium text-gray-600 mb-6">
+              <span className="flex h-2 w-2 rounded-full bg-blue-500 mr-2"></span>
+              Available for Freelance
+            </div>
+          </FadeIn>
+          <FadeIn delay={200}>
+            <h1 className="text-5xl md:text-7xl font-semibold tracking-tighter mb-6 bg-gradient-to-b from-black to-black/70 bg-clip-text text-transparent">
+              Digital craftsmanship.
+            </h1>
+          </FadeIn>
+          <FadeIn delay={400}>
+            <p className="text-xl text-gray-500 md:text-2xl max-w-2xl mx-auto mb-10 leading-relaxed">
+              Specialized in photorealistic texturing and material creation using Substance Painter.
+            </p>
+          </FadeIn>
+          <FadeIn delay={600}>
+            <div className="flex justify-center gap-4">
+              <Button size="lg" className="rounded-full text-base" asChild>
+                <a href="#work">View Projects</a>
+              </Button>
+              <Button size="lg" variant="outline" className="rounded-full text-base" asChild>
+                <a href="#contact">Contact Me</a>
+              </Button>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -252,29 +286,43 @@ function App() {
 
             {/* Right Side: Information */}
             <div className="w-full md:w-1/2 text-center md:text-left">
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">About Me</h2>
+              <FadeIn>
+                <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">About Me</h2>
+              </FadeIn>
 
               <div className="prose prose-lg text-gray-600 space-y-6 mb-10">
-                <p className="text-xl md:text-2xl leading-relaxed font-medium text-gray-900">
-                  I'm Thayika, a <span className="font-bold">Texture Artist</span> based in Thailand specializing in <span className="font-bold">photorealistic texturing</span> and <span className="font-bold">material creation</span>.
-                </p>
-                <p className="text-lg leading-relaxed text-gray-500">
-                  I specialize exclusively in the texturing phase of production. I focus on texturing existing 3D models and transforming them into lifelike assets using <span className="font-bold text-gray-900">Substance Painter</span> for modern PBR workflows, ensuring high-quality results optimized for games and real-time rendering.
-                </p>
-                <p className="text-lg leading-relaxed text-gray-500">
-                  I am constantly exploring new technologies to push the boundaries of my artistic capabilities and am currently available for freelance opportunities.
-                </p>
+                <FadeIn delay={200}>
+                  <p className="text-xl md:text-2xl leading-relaxed font-medium text-gray-900">
+                    I'm Thayika, a <span className="font-bold">Texture Artist</span> based in Thailand specializing in <span className="font-bold">photorealistic texturing</span> and <span className="font-bold">material creation</span>.
+                  </p>
+                </FadeIn>
+                <FadeIn delay={300}>
+                  <p className="text-lg leading-relaxed text-gray-500">
+                    I specialize exclusively in the texturing phase of production. I focus on texturing existing 3D models and transforming them into lifelike assets using <span className="font-bold text-gray-900">Substance Painter</span> for modern PBR workflows, ensuring high-quality results optimized for games and real-time rendering.
+                  </p>
+                </FadeIn>
+                <FadeIn delay={400}>
+                  <p className="text-lg leading-relaxed text-gray-500">
+                    I am constantly exploring new technologies to push the boundaries of my artistic capabilities and am currently available for freelance opportunities.
+                  </p>
+                </FadeIn>
               </div>
 
-              {/* Green Substance Painter Icon */}
-              <div className="flex justify-center md:justify-start">
-                <div className="group flex flex-col items-center gap-3">
-                  <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-[#0CCE6B] text-[#111] shadow-xl shadow-green-200/50 transition-all duration-300 group-hover:scale-105 group-hover:shadow-green-300/50">
-                    <span className="text-3xl font-extrabold tracking-tight select-none">Pt</span>
+              {/* Substance Painter Icon */}
+              <FadeIn delay={500}>
+                <div className="flex justify-center md:justify-start">
+                  <div className="group flex flex-col items-center gap-3">
+                    <div className="h-20 w-20 overflow-hidden rounded-2xl shadow-xl shadow-green-200/50 transition-all duration-300 group-hover:scale-105 group-hover:shadow-green-300/50">
+                      <img 
+                        src="/adobe-substance-3d-painter-icon.webp" 
+                        alt="Substance Painter" 
+                        className="h-full w-full object-cover" 
+                      />
+                    </div>
+                    <span className="text-sm font-semibold text-gray-400 uppercase tracking-wider">Substance Painter</span>
                   </div>
-                  <span className="text-sm font-semibold text-gray-400 uppercase tracking-wider">Substance Painter</span>
                 </div>
-              </div>
+              </FadeIn>
             </div>
           </div>
         </div>
