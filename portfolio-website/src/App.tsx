@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Box, X } from "lucide-react";
+import { ArrowRight, Box, Mail, X } from "lucide-react";
 
 // Full dataset of all assets
 const ALL_ARTWORKS = [
@@ -206,8 +206,9 @@ function App() {
             </p>
             <a 
               href="mailto:pethayika@gmail.com" 
-              className="text-2xl md:text-3xl font-medium text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+              className="inline-flex items-center gap-2 text-2xl md:text-3xl font-medium text-blue-600 hover:text-blue-800 hover:underline transition-colors"
             >
+              <Mail className="h-6 w-6 md:h-8 md:w-8" />
               pethayika@gmail.com
             </a>
           </div>
