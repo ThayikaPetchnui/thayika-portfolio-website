@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Box, X } from "lucide-react";
@@ -39,6 +39,10 @@ const FEATURED_ARTWORKS = [
 function App() {
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  useEffect(() => {
+    document.title = "Thayika Petchnui - Portfolio";
+  }, []);
 
   return (
     <div className="min-h-screen bg-white text-slate-900 selection:bg-blue-100 selection:text-blue-900">
