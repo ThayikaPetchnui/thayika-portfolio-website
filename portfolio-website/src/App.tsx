@@ -96,11 +96,48 @@ function App() {
   const prevWork = () => setCurrentWorkIndex((prev) => (prev - 1 + FEATURED_ARTWORKS.length) % FEATURED_ARTWORKS.length);
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-blue-100 selection:text-blue-900">
+    <div className="min-h-screen bg-[#E5E3DF] text-slate-900 selection:bg-blue-100 selection:text-blue-900">
       <Navbar />
       
+      {/* HERO SECTION */}
+      <section className="relative pt-32 pb-20 md:py-32 px-4 overflow-hidden">
+        {/* Background Images */}
+        <div className="absolute inset-0 -z-10 flex items-center justify-center opacity-15 pointer-events-none select-none">
+          <img src="/assets/MM4A1_Ronin.png" alt="" className="w-[1000px] object-contain" />
+        </div>
+
+        <div className="container mx-auto max-w-4xl text-center relative z-10">
+          <FadeIn>
+            <div className="inline-flex items-center rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs font-medium text-gray-600 mb-6">
+              <span className="flex h-2 w-2 rounded-full bg-blue-500 mr-2"></span>
+              Available for Freelance
+            </div>
+          </FadeIn>
+          <FadeIn delay={200}>
+            <h1 className="text-5xl md:text-7xl font-semibold tracking-tighter mb-6 bg-gradient-to-b from-black to-black/70 bg-clip-text text-transparent">
+              Digital craftsmanship.
+            </h1>
+          </FadeIn>
+          <FadeIn delay={400}>
+            <p className="text-xl text-gray-500 md:text-2xl max-w-2xl mx-auto mb-10 leading-relaxed">
+              Specialized in photorealistic texturing and material creation using Substance Painter.
+            </p>
+          </FadeIn>
+          <FadeIn delay={600}>
+            <div className="flex justify-center gap-4">
+              <Button size="lg" className="rounded-full text-base" asChild>
+                <a href="#work">View Projects</a>
+              </Button>
+              <Button size="lg" variant="outline" className="rounded-full text-base" asChild>
+                <a href="#contact">Contact Me</a>
+              </Button>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* GALLERY SECTION */}
-      <section id="work" className="pt-32 pb-20 bg-gray-50/50">
+      <section id="work" className="py-20">
         <div className="container mx-auto px-4 md:px-8">
           
           <div className="flex flex-col gap-6">
@@ -180,38 +217,6 @@ function App() {
         </div>
       </section>
 
-      {/* HERO SECTION */}
-      <section className="py-20 md:py-32 px-4">
-        <div className="container mx-auto max-w-4xl text-center">
-          <FadeIn>
-            <div className="inline-flex items-center rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs font-medium text-gray-600 mb-6">
-              <span className="flex h-2 w-2 rounded-full bg-blue-500 mr-2"></span>
-              Available for Freelance
-            </div>
-          </FadeIn>
-          <FadeIn delay={200}>
-            <h1 className="text-5xl md:text-7xl font-semibold tracking-tighter mb-6 bg-gradient-to-b from-black to-black/70 bg-clip-text text-transparent">
-              Digital craftsmanship.
-            </h1>
-          </FadeIn>
-          <FadeIn delay={400}>
-            <p className="text-xl text-gray-500 md:text-2xl max-w-2xl mx-auto mb-10 leading-relaxed">
-              Specialized in photorealistic texturing and material creation using Substance Painter.
-            </p>
-          </FadeIn>
-          <FadeIn delay={600}>
-            <div className="flex justify-center gap-4">
-              <Button size="lg" className="rounded-full text-base" asChild>
-                <a href="#work">View Projects</a>
-              </Button>
-              <Button size="lg" variant="outline" className="rounded-full text-base" asChild>
-                <a href="#contact">Contact Me</a>
-              </Button>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
       {/* FULL GALLERY MODAL */}
       {isGalleryOpen && (
         <div className="fixed inset-0 z-[60] bg-white overflow-y-auto animate-in fade-in duration-200">
@@ -270,7 +275,7 @@ function App() {
       )}
 
       {/* ABOUT SECTION */}
-      <section id="about" className="py-24 px-4 bg-white">
+      <section id="about" className="py-24 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
             
@@ -336,7 +341,7 @@ function App() {
       </section>
 
       {/* CONTACT SECTION */}
-      <section id="contact" className="py-20 bg-gray-50/50">
+      <section id="contact" className="py-20">
         <div className="container mx-auto max-w-3xl text-center px-4">
           <h2 className="text-3xl font-semibold tracking-tight mb-8">Contact</h2>
           <div className="flex flex-col items-center justify-center gap-4">
