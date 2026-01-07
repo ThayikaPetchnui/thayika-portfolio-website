@@ -112,7 +112,7 @@ function App() {
               </div>
 
               {/* Navigation Arrows */}
-              <div className="absolute inset-0 flex items-center justify-between p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute inset-0 flex items-center justify-between p-4">
                 <Button 
                   variant="ghost" 
                   size="icon" 
@@ -139,8 +139,8 @@ function App() {
                   key={art.id} 
                   className={`group relative aspect-square cursor-pointer overflow-hidden rounded-lg transition-all duration-300 ${
                     idx === currentWorkIndex 
-                      ? "ring-2 ring-blue-500 ring-offset-2 scale-95 opacity-100" 
-                      : "opacity-40 hover:opacity-100 hover:scale-105 grayscale hover:grayscale-0"
+                      ? "ring-4 ring-blue-500 ring-offset-2 scale-95" 
+                      : "hover:scale-105"
                   }`}
                   onClick={() => setCurrentWorkIndex(idx)}
                 >
