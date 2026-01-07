@@ -93,7 +93,7 @@ function App() {
           <div className="flex flex-col gap-6">
             {/* Main Focused Image */}
             <div 
-              className="group relative aspect-video w-full cursor-pointer overflow-hidden rounded-2xl bg-gray-200 shadow-lg"
+              className="group relative aspect-video w-full max-w-4xl mx-auto cursor-pointer overflow-hidden rounded-2xl bg-gray-200 shadow-lg"
               onClick={() => setSelectedImage(ALL_ARTWORKS[currentWorkIndex].url)}
             >
               <img 
