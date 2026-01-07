@@ -187,11 +187,11 @@ function App() {
                  <X className="h-6 w-6" />
                </Button>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pb-12">
+            <div className="grid grid-cols-5 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-2 pb-12">
               {ALL_ARTWORKS.map((art) => (
                 <div 
                   key={art.id} 
-                  className="group relative aspect-square cursor-pointer overflow-hidden rounded-xl bg-gray-100 hover:shadow-md transition-all"
+                  className="group relative aspect-square cursor-pointer overflow-hidden rounded-lg bg-gray-100 hover:shadow-md transition-all"
                   onClick={() => setSelectedImage(art.url)}
                 >
                   <img 
