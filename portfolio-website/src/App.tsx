@@ -3,8 +3,27 @@ import { Navbar } from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Box, Mail, X, ChevronLeft, ChevronRight } from "lucide-react";
 
-// Full dataset of all assets
-const ALL_ARTWORKS = [
+// Featured assets for the main view
+const FEATURED_ARTWORKS = [
+  { id: 101, title: "Neon Dragon", category: "Featured Skin", url: "/assets/featured/AK47_NeonDragon.png" },
+  { id: 102, title: "Paint Splash", category: "Featured Skin", url: "/assets/featured/AK47_Paint.png" },
+  { id: 103, title: "Ocean Paint", category: "Featured Skin", url: "/assets/featured/AK47_PaintOcean.png" },
+  { id: 104, title: "Pink Wall", category: "Featured Skin", url: "/assets/featured/AK47_PinkWall.png" },
+  { id: 105, title: "Queen", category: "Featured Skin", url: "/assets/featured/AK47_Queen.png" },
+  { id: 106, title: "Rainbow", category: "Featured Skin", url: "/assets/featured/AK47_Rainbow.png" },
+  { id: 107, title: "Red Zebra", category: "Featured Skin", url: "/assets/featured/AK47_RedZebra.png" },
+  { id: 108, title: "Skull Army", category: "Featured Skin", url: "/assets/featured/AK47_SkullArmy.png" },
+  { id: 109, title: "Spray Paint", category: "Featured Skin", url: "/assets/featured/AK47_Spray.png" },
+  { id: 110, title: "Thunderbird", category: "Featured Skin", url: "/assets/featured/AK47_Thunderbird.png" },
+  { id: 111, title: "Water Element", category: "Featured Skin", url: "/assets/featured/AK47_Water.png" },
+  { id: 112, title: "XX Design", category: "Featured Skin", url: "/assets/featured/AK47_XX.png" },
+  { id: 113, title: "Yellow Abstract", category: "Featured Skin", url: "/assets/featured/AK47_YellowAbstract.png" },
+  { id: 114, title: "Yellow Zebra", category: "Featured Skin", url: "/assets/featured/AK47_YellowZebra.png" },
+  { id: 115, title: "Skulls", category: "Featured Skin", url: "/assets/featured/Ak47_Skulls.png" },
+];
+
+// Regular assets
+const REGULAR_ARTWORKS = [
   { id: 1, title: "Arctic Digital AK47", category: "Weapon Skin", url: "/assets/AK47_ArcticDigital3.png" },
   { id: 2, title: "Arctic Stripe 2", category: "Weapon Skin", url: "/assets/AK47_ArcticStripe2.png" },
   { id: 3, title: "Arctic Stripe 3", category: "Weapon Skin", url: "/assets/AK47_ArcticStripe3.png" },
@@ -28,6 +47,8 @@ const ALL_ARTWORKS = [
   { id: 21, title: "Woodland Stripe 5", category: "Weapon Skin", url: "/assets/AK47_WoodlandStripe5.png" },
 ];
 
+const ALL_ARTWORKS = [...FEATURED_ARTWORKS, ...REGULAR_ARTWORKS];
+
 function App() {
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -40,13 +61,13 @@ function App() {
   // Auto-cycle works
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentWorkIndex((prev) => (prev + 1) % ALL_ARTWORKS.length);
+      setCurrentWorkIndex((prev) => (prev + 1) % FEATURED_ARTWORKS.length);
     }, 5000);
     return () => clearInterval(timer);
   }, [currentWorkIndex]);
 
-  const nextWork = () => setCurrentWorkIndex((prev) => (prev + 1) % ALL_ARTWORKS.length);
-  const prevWork = () => setCurrentWorkIndex((prev) => (prev - 1 + ALL_ARTWORKS.length) % ALL_ARTWORKS.length);
+  const nextWork = () => setCurrentWorkIndex((prev) => (prev + 1) % FEATURED_ARTWORKS.length);
+  const prevWork = () => setCurrentWorkIndex((prev) => (prev - 1 + FEATURED_ARTWORKS.length) % FEATURED_ARTWORKS.length);
 
   return (
     <div className="min-h-screen bg-white text-slate-900 selection:bg-blue-100 selection:text-blue-900">
@@ -94,11 +115,11 @@ function App() {
             {/* Main Focused Image */}
             <div 
               className="group relative aspect-video w-full max-w-4xl mx-auto cursor-pointer overflow-hidden rounded-2xl bg-gray-200 shadow-lg"
-              onClick={() => setSelectedImage(ALL_ARTWORKS[currentWorkIndex].url)}
+              onClick={() => setSelectedImage(FEATURED_ARTWORKS[currentWorkIndex].url)}
             >
               <img 
-                src={ALL_ARTWORKS[currentWorkIndex].url} 
-                alt={ALL_ARTWORKS[currentWorkIndex].title}
+                src={FEATURED_ARTWORKS[currentWorkIndex].url} 
+                alt={FEATURED_ARTWORKS[currentWorkIndex].title}
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               
@@ -107,8 +128,8 @@ function App() {
               
               {/* Text Content */}
               <div className="absolute bottom-0 left-0 p-6 md:p-10 text-white">
-                <p className="text-sm md:text-base font-medium text-blue-300 mb-2">{ALL_ARTWORKS[currentWorkIndex].category}</p>
-                <h3 className="text-2xl md:text-4xl font-bold tracking-tight mb-2">{ALL_ARTWORKS[currentWorkIndex].title}</h3>
+                <p className="text-sm md:text-base font-medium text-blue-300 mb-2">{FEATURED_ARTWORKS[currentWorkIndex].category}</p>
+                <h3 className="text-2xl md:text-4xl font-bold tracking-tight mb-2">{FEATURED_ARTWORKS[currentWorkIndex].title}</h3>
               </div>
 
               {/* Navigation Arrows */}
@@ -134,7 +155,7 @@ function App() {
 
             {/* Thumbnails Grid */}
             <div className="grid grid-cols-5 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-2 px-1">
-              {ALL_ARTWORKS.map((art, idx) => (
+              {FEATURED_ARTWORKS.map((art, idx) => (
                 <div 
                   key={art.id} 
                   className={`group relative aspect-square cursor-pointer overflow-hidden rounded-lg transition-all duration-300 ${
