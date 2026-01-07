@@ -170,12 +170,11 @@ function App() {
       )}
 
       {/* ABOUT SECTION */}
-      <section id="about" className="py-20 px-4">
+      <section id="about" className="py-24 px-4 bg-white">
         <div className="container mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-semibold tracking-tight mb-8">About Me</h2>
           
-          <div className="mb-8 flex justify-center">
-            <div className="relative h-48 w-48 overflow-hidden rounded-full border-4 border-white shadow-lg">
+          <div className="mb-10 flex justify-center">
+            <div className="relative h-48 w-48 md:h-56 md:w-56 overflow-hidden rounded-full border-4 border-white shadow-2xl ring-1 ring-gray-100">
               <img 
                 src="/thayika-profile-picture.png" 
                 alt="Thayika Petchnui" 
@@ -184,13 +183,17 @@ function App() {
             </div>
           </div>
 
-          <div className="prose prose-lg mx-auto text-gray-600">
-            <p className="text-xl leading-relaxed mb-6">
-              My name is Thayika Petchnui. I am from Thailand.
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">About Me</h2>
+
+          <div className="prose prose-lg mx-auto text-gray-600 space-y-6">
+            <p className="text-xl md:text-2xl leading-relaxed font-medium text-gray-900">
+              I'm Thayika Petchnui, a 3D Artist based in Thailand specializing in photorealistic texturing and material creation.
             </p>
-            <p className="text-lg leading-relaxed">
-              I specialize in texturing and material creation. 
-              Always eager to learn new technologies and improve my artistic skills.
+            <p className="text-lg leading-relaxed text-gray-500">
+              With a keen eye for detail and a passion for digital craftsmanship, I transform 3D models into lifelike assets that tell a story. My workflow centers around Substance Painter and modern PBR pipelines, ensuring high-quality results optimized for games and real-time rendering.
+            </p>
+            <p className="text-lg leading-relaxed text-gray-500">
+              I am constantly exploring new technologies to push the boundaries of my artistic capabilities and am currently available for freelance opportunities.
             </p>
           </div>
         </div>
