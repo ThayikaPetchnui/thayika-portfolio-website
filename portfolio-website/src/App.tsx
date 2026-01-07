@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, type ReactNode } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Box, Mail, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, Box, Mail, X, ChevronLeft, ChevronRight, Brush, Palette, Layers, Zap, Monitor } from "lucide-react";
 
 // Simple fade-in animation component
 const FadeIn = ({ children, delay = 0, className = "" }: { children: ReactNode, delay?: number, className?: string }) => {
@@ -105,6 +105,16 @@ const REGULAR_ARTWORKS = [
 ];
 
 const ALL_ARTWORKS = [...FEATURED_ARTWORKS, ...REGULAR_ARTWORKS];
+
+const SKILLS = [
+  { name: "Substance 3D Painter", image: "/adobe-substance-3d-painter-icon.webp" },
+  { name: "Photorealistic Texturing", icon: Brush, color: "text-pink-500" },
+  { name: "Material Creation", icon: Palette, color: "text-purple-500" },
+  { name: "PBR Workflows", icon: Layers, color: "text-blue-500" },
+  { name: "Hard Surface", icon: Box, color: "text-emerald-500" },
+  { name: "Asset Optimization", icon: Zap, color: "text-amber-500" },
+  { name: "Real-time Rendering", icon: Monitor, color: "text-cyan-500" },
+];
 
 function App() {
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
@@ -350,6 +360,25 @@ function App() {
                   </p>
                 </FadeIn>
               </div>
+
+              {/* Skills */}
+              <FadeIn delay={450}>
+                <div className="flex flex-wrap gap-3 justify-center md:justify-start mb-10">
+                  {SKILLS.map((skill) => (
+                    <div 
+                      key={skill.name} 
+                      className="inline-flex items-center gap-2.5 rounded-full bg-white px-5 py-2.5 text-sm font-medium text-slate-800 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 cursor-default select-none"
+                    >
+                      {"icon" in skill ? (
+                        <skill.icon className={`h-4.5 w-4.5 ${skill.color}`} strokeWidth={2} />
+                      ) : "image" in skill ? (
+                        <img src={skill.image} alt="" className="h-4.5 w-4.5 object-contain" />
+                      ) : null}
+                      {skill.name}
+                    </div>
+                  ))}
+                </div>
+              </FadeIn>
 
               {/* Substance Painter Icon */}
               <FadeIn delay={500}>
