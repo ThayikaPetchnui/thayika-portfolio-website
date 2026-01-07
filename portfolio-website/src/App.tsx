@@ -213,7 +213,7 @@ function App() {
       {/* FOOTER */}
       <footer className="py-12 border-t border-gray-100">
         <div className="container mx-auto px-4 text-center text-gray-400 text-sm">
-          <p>© 2026 Portfolio. Built with Vite, Tailwind v4 & Shadcn.</p>
+          <p>© 2026 Thayika Petchnui.</p>
         </div>
       </footer>
     </div>
