@@ -235,10 +235,10 @@ function App() {
 
               <div className="prose prose-lg text-gray-600 space-y-6">
                 <p className="text-xl md:text-2xl leading-relaxed font-medium text-gray-900">
-                  I'm Thayika, a 3D Artist based in Thailand specializing in photorealistic texturing and material creation.
+                  I'm Thayika, a <span className="font-bold">3D Artist</span> based in Thailand specializing in <span className="font-bold">photorealistic texturing</span> and <span className="font-bold">material creation</span>.
                 </p>
                 <p className="text-lg leading-relaxed text-gray-500">
-                  With a keen eye for detail and a passion for digital craftsmanship, I transform 3D models into lifelike assets that tell a story. My workflow centers around Substance Painter and modern PBR pipelines, ensuring high-quality results optimized for games and real-time rendering.
+                  With a keen eye for detail and a passion for digital craftsmanship, I transform 3D models into lifelike assets that tell a story. My workflow centers around <span className="inline-flex items-center font-bold text-gray-900"><span className="mr-1.5 flex h-5 w-5 items-center justify-center rounded-md bg-[#F3A63E] text-[10px] font-extrabold text-[#111] shadow-sm select-none">Pt</span>Substance Painter</span> and modern <span className="font-bold text-gray-900">PBR pipelines</span>, ensuring high-quality results optimized for games and real-time rendering.
                 </p>
                 <p className="text-lg leading-relaxed text-gray-500">
                   I am constantly exploring new technologies to push the boundaries of my artistic capabilities and am currently available for freelance opportunities.
@@ -271,7 +271,7 @@ function App() {
       {/* FOOTER */}
       <footer className="py-12 border-t border-gray-100">
         <div className="container mx-auto px-4 text-center text-gray-400 text-sm">
-          <p>© 2026 Thayika.</p>
+          <p>© 2026 Thayika</p>
         </div>
       </footer>
     </div>
