@@ -238,7 +238,7 @@ function App() {
                   I'm Thayika, a <span className="font-bold">Texture Artist</span> based in Thailand specializing in <span className="font-bold">photorealistic texturing</span> and <span className="font-bold">material creation</span>.
                 </p>
                 <p className="text-lg leading-relaxed text-gray-500">
-                  I specialize exclusively in the texturing phase of production. <span className="font-bold text-gray-900">I do not create 3D models.</span> Instead, I focus on transforming provided models into lifelike assets using <span className="font-bold text-gray-900">Substance Painter</span> for modern PBR workflows, ensuring high-quality results optimized for games and real-time rendering.
+                  I specialize exclusively in the texturing phase of production. I focus on texturing existing 3D models and transforming them into lifelike assets using <span className="font-bold text-gray-900">Substance Painter</span> for modern PBR workflows, ensuring high-quality results optimized for games and real-time rendering.
                 </p>
                 <p className="text-lg leading-relaxed text-gray-500">
                   I am constantly exploring new technologies to push the boundaries of my artistic capabilities and am currently available for freelance opportunities.
