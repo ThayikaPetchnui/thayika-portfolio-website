@@ -171,30 +171,36 @@ function App() {
 
       {/* ABOUT SECTION */}
       <section id="about" className="py-24 px-4 bg-white">
-        <div className="container mx-auto max-w-3xl text-center">
-          
-          <div className="mb-10 flex justify-center">
-            <div className="relative h-48 w-48 md:h-56 md:w-56 overflow-hidden rounded-full border-4 border-white shadow-2xl ring-1 ring-gray-100">
-              <img 
-                src="/thayika-profile-picture.png" 
-                alt="Thayika Petchnui" 
-                className="h-full w-full object-cover"
-              />
+        <div className="container mx-auto max-w-5xl">
+          <div className="flex flex-col md:flex-row items-center gap-12">
+            
+            {/* Left Side: Profile Picture */}
+            <div className="flex-shrink-0">
+              <div className="relative h-64 w-64 overflow-hidden rounded-full border-4 border-white shadow-2xl ring-1 ring-gray-100">
+                <img 
+                  src="/thayika-profile-picture.png" 
+                  alt="Thayika Petchnui" 
+                  className="h-full w-full object-cover"
+                />
+              </div>
             </div>
-          </div>
 
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">About Me</h2>
+            {/* Right Side: Information */}
+            <div className="text-center md:text-left">
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">About Me</h2>
 
-          <div className="prose prose-lg mx-auto text-gray-600 space-y-6">
-            <p className="text-xl md:text-2xl leading-relaxed font-medium text-gray-900">
-              I'm Thayika Petchnui, a 3D Artist based in Thailand specializing in photorealistic texturing and material creation.
-            </p>
-            <p className="text-lg leading-relaxed text-gray-500">
-              With a keen eye for detail and a passion for digital craftsmanship, I transform 3D models into lifelike assets that tell a story. My workflow centers around Substance Painter and modern PBR pipelines, ensuring high-quality results optimized for games and real-time rendering.
-            </p>
-            <p className="text-lg leading-relaxed text-gray-500">
-              I am constantly exploring new technologies to push the boundaries of my artistic capabilities and am currently available for freelance opportunities.
-            </p>
+              <div className="prose prose-lg text-gray-600 space-y-6">
+                <p className="text-xl md:text-2xl leading-relaxed font-medium text-gray-900">
+                  I'm Thayika Petchnui, a 3D Artist based in Thailand specializing in photorealistic texturing and material creation.
+                </p>
+                <p className="text-lg leading-relaxed text-gray-500">
+                  With a keen eye for detail and a passion for digital craftsmanship, I transform 3D models into lifelike assets that tell a story. My workflow centers around Substance Painter and modern PBR pipelines, ensuring high-quality results optimized for games and real-time rendering.
+                </p>
+                <p className="text-lg leading-relaxed text-gray-500">
+                  I am constantly exploring new technologies to push the boundaries of my artistic capabilities and am currently available for freelance opportunities.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
