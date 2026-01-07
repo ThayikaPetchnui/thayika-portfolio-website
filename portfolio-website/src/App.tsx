@@ -1,16 +1,45 @@
+import { useState } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Box } from "lucide-react";
+import { ArrowRight, Box, X } from "lucide-react";
 
-// Mock Data for your Substance Painter Renders
-const ARTWORKS = [
+// Full dataset of all assets
+const ALL_ARTWORKS = [
   { id: 1, title: "Arctic Digital AK47", category: "Weapon Skin", url: "/assets/AK47_ArcticDigital3.png" },
-  { id: 2, title: "Desert Camo AK47", category: "Weapon Skin", url: "/assets/AK47_Desert.png" },
-  { id: 3, title: "Woodland Stripe AK47", category: "Weapon Skin", url: "/assets/AK47_WoodlandStripe1.png" },
-  { id: 4, title: "Desert Yellow AK47", category: "Weapon Skin", url: "/assets/AK47_Desert_Yellow.png" },
+  { id: 2, title: "Arctic Stripe 2", category: "Weapon Skin", url: "/assets/AK47_ArcticStripe2.png" },
+  { id: 3, title: "Arctic Stripe 3", category: "Weapon Skin", url: "/assets/AK47_ArcticStripe3.png" },
+  { id: 4, title: "Arctic Stripe 4", category: "Weapon Skin", url: "/assets/AK47_ArcticStripe4.png" },
+  { id: 5, title: "Arctic Stripe 5", category: "Weapon Skin", url: "/assets/AK47_ArcticStripe5.png" },
+  { id: 6, title: "Arctic Stripe 6", category: "Weapon Skin", url: "/assets/AK47_ArcticStripe6.png" },
+  { id: 7, title: "Arctic Stripe 7", category: "Weapon Skin", url: "/assets/AK47_ArcticStripe7.png" },
+  { id: 8, title: "Arctic Stripe 8", category: "Weapon Skin", url: "/assets/AK47_ArcticStripe8.png" },
+  { id: 9, title: "Arctic Stripe 9", category: "Weapon Skin", url: "/assets/AK47_ArcticStripe9.png" },
+  { id: 10, title: "Desert Camo AK47", category: "Weapon Skin", url: "/assets/AK47_Desert.png" },
+  { id: 11, title: "Desert Stripe 11", category: "Weapon Skin", url: "/assets/AK47_DesertStripe11.png" },
+  { id: 12, title: "Desert Stripe 12", category: "Weapon Skin", url: "/assets/AK47_DesertStripe12.png" },
+  { id: 13, title: "Desert Stripe 13", category: "Weapon Skin", url: "/assets/AK47_DesertStripe13.png" },
+  { id: 14, title: "Desert Stripe 14", category: "Weapon Skin", url: "/assets/AK47_DesertStripe14.png" },
+  { id: 15, title: "Desert Stripe 15", category: "Weapon Skin", url: "/assets/AK47_DesertStripe15.png" },
+  { id: 16, title: "Desert Yellow AK47", category: "Weapon Skin", url: "/assets/AK47_Desert_Yellow.png" },
+  { id: 17, title: "Desert Yellow Light", category: "Weapon Skin", url: "/assets/AK47_Desert_Yellowlight.png" },
+  { id: 18, title: "Woodland Stripe 1", category: "Weapon Skin", url: "/assets/AK47_WoodlandStripe1.png" },
+  { id: 19, title: "Woodland Stripe 3", category: "Weapon Skin", url: "/assets/AK47_WoodlandStripe3.png" },
+  { id: 20, title: "Woodland Stripe 4", category: "Weapon Skin", url: "/assets/AK47_WoodlandStripe4.png" },
+  { id: 21, title: "Woodland Stripe 5", category: "Weapon Skin", url: "/assets/AK47_WoodlandStripe5.png" },
+];
+
+// Featured subset for main page
+const FEATURED_ARTWORKS = [
+  ALL_ARTWORKS[0],  // Arctic Digital
+  ALL_ARTWORKS[9],  // Desert
+  ALL_ARTWORKS[17], // Woodland Stripe 1
+  ALL_ARTWORKS[15], // Desert Yellow
 ];
 
 function App() {
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   return (
     <div className="min-h-screen bg-white text-slate-900 selection:bg-blue-100 selection:text-blue-900">
       <Navbar />
@@ -44,14 +73,22 @@ function App() {
         <div className="container mx-auto px-4 md:px-8">
           <div className="flex items-center justify-between mb-12">
             <h2 className="text-2xl font-semibold tracking-tight">Selected Works</h2>
-            <Button variant="ghost" className="text-muted-foreground">
+            <Button 
+              variant="ghost" 
+              className="text-muted-foreground cursor-pointer"
+              onClick={() => setIsGalleryOpen(true)}
+            >
               View All <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {ARTWORKS.map((art) => (
-              <div key={art.id} className="group relative aspect-[4/3] cursor-pointer overflow-hidden rounded-2xl bg-gray-200 shadow-sm transition-all hover:shadow-xl hover:-translate-y-1">
+            {FEATURED_ARTWORKS.map((art) => (
+              <div 
+                key={art.id} 
+                className="group relative aspect-[4/3] cursor-pointer overflow-hidden rounded-2xl bg-gray-200 shadow-sm transition-all hover:shadow-xl hover:-translate-y-1"
+                onClick={() => setSelectedImage(art.url)}
+              >
                 {/* Image */}
                 <img 
                   src={art.url} 
@@ -71,10 +108,78 @@ function App() {
         </div>
       </section>
 
+      {/* FULL GALLERY MODAL */}
+      {isGalleryOpen && (
+        <div className="fixed inset-0 z-[60] bg-white overflow-y-auto animate-in fade-in duration-200">
+          <div className="container mx-auto px-4 py-8">
+            <div className="flex justify-between items-center mb-8 sticky top-0 bg-white z-10 py-4 border-b border-gray-100">
+               <h2 className="text-3xl font-bold tracking-tight">All Works</h2>
+               <Button variant="ghost" size="icon" onClick={() => setIsGalleryOpen(false)} className="rounded-full hover:bg-gray-100">
+                 <X className="h-6 w-6" />
+               </Button>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pb-12">
+              {ALL_ARTWORKS.map((art) => (
+                <div 
+                  key={art.id} 
+                  className="group relative aspect-square cursor-pointer overflow-hidden rounded-xl bg-gray-100 hover:shadow-md transition-all"
+                  onClick={() => setSelectedImage(art.url)}
+                >
+                  <img 
+                    src={art.url} 
+                    alt={art.title} 
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* LIGHTBOX MODAL */}
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 z-[70] flex items-center justify-center bg-black/95 p-4 animate-in fade-in duration-200 backdrop-blur-sm" 
+          onClick={() => setSelectedImage(null)}
+        >
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            className="absolute top-4 right-4 text-white hover:bg-white/20 hover:text-white rounded-full" 
+            onClick={(e) => {
+              e.stopPropagation();
+              setSelectedImage(null);
+            }}
+          >
+            <X className="h-8 w-8" />
+          </Button>
+          <img 
+            src={selectedImage} 
+            alt="Full view" 
+            className="max-h-[90vh] max-w-full object-contain rounded-lg shadow-2xl" 
+            onClick={(e) => e.stopPropagation()} 
+          />
+        </div>
+      )}
+
       {/* ABOUT SECTION */}
       <section id="about" className="py-20 px-4">
         <div className="container mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-semibold tracking-tight mb-8">About Me</h2>
+          
+          <div className="mb-8 flex justify-center">
+            <div className="relative h-48 w-48 overflow-hidden rounded-full border-4 border-white shadow-lg">
+              <img 
+                src="/thayika-profile-picture.png" 
+                alt="Thayika Petchnui" 
+                className="h-full w-full object-cover"
+              />
+            </div>
+          </div>
+
           <div className="prose prose-lg mx-auto text-gray-600">
             <p className="text-xl leading-relaxed mb-6">
               My name is Thayika Petchnui. I am from Thailand.
