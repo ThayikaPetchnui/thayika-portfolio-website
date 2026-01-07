@@ -1,14 +1,40 @@
-import { Button } from "@/components/ui/button"; // We will create this dummy button next
+import { useState } from "react";
+import { cn } from "@/lib/utils";
+
+const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
+  const [isActive, setIsActive] = useState(false);
+
+  const handleClick = () => {
+    setIsActive(true);
+    setTimeout(() => setIsActive(false), 400);
+  };
+
+  return (
+    <a
+      href={href}
+      onClick={handleClick}
+      className="relative flex items-center justify-center px-5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-black"
+    >
+      <span className="relative z-10">{children}</span>
+      <span
+        className={cn(
+          "absolute inset-0 z-0 rounded-full bg-black/10 transition-all duration-500 ease-out",
+          isActive ? "scale-100 opacity-100" : "scale-50 opacity-0"
+        )}
+      />
+    </a>
+  );
+};
 
 export function Navbar() {
   return (
     <nav className="fixed top-0 z-50 w-full border-b border-white/10 bg-[#E5E3DF]/50 backdrop-blur-xl supports-[backdrop-filter]:bg-[#E5E3DF]/20">
-      <div className="container flex h-14 items-center justify-between px-4 md:px-8">
+      <div className="container mx-auto relative flex h-14 items-center px-4 md:px-8">
         <div className="text-sm font-semibold tracking-tight">PORTFOLIO</div>
-        <div className="flex gap-4 text-sm text-muted-foreground">
-          <a href="#work" className="hover:text-primary transition-colors">Work</a>
-          <a href="#about" className="hover:text-primary transition-colors">About</a>
-          <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-2">
+          <NavLink href="#work">Work</NavLink>
+          <NavLink href="#about">About</NavLink>
+          <NavLink href="#contact">Contact</NavLink>
         </div>
       </div>
     </nav>
