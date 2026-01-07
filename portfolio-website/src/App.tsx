@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Box, Mail, X } from "lucide-react";
+import { ArrowRight, Box, Mail, X, ChevronLeft, ChevronRight } from "lucide-react";
 
 // Full dataset of all assets
 const ALL_ARTWORKS = [
@@ -28,21 +28,25 @@ const ALL_ARTWORKS = [
   { id: 21, title: "Woodland Stripe 5", category: "Weapon Skin", url: "/assets/AK47_WoodlandStripe5.png" },
 ];
 
-// Featured subset for main page
-const FEATURED_ARTWORKS = [
-  ALL_ARTWORKS[0],  // Arctic Digital
-  ALL_ARTWORKS[9],  // Desert
-  ALL_ARTWORKS[17], // Woodland Stripe 1
-  ALL_ARTWORKS[15], // Desert Yellow
-];
-
 function App() {
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [currentWorkIndex, setCurrentWorkIndex] = useState(0);
 
   useEffect(() => {
     document.title = "Thayika - Portfolio";
   }, []);
+
+  // Auto-cycle works
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentWorkIndex((prev) => (prev + 1) % ALL_ARTWORKS.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [currentWorkIndex]);
+
+  const nextWork = () => setCurrentWorkIndex((prev) => (prev + 1) % ALL_ARTWORKS.length);
+  const prevWork = () => setCurrentWorkIndex((prev) => (prev - 1 + ALL_ARTWORKS.length) % ALL_ARTWORKS.length);
 
   return (
     <div className="min-h-screen bg-white text-slate-900 selection:bg-blue-100 selection:text-blue-900">
@@ -86,28 +90,68 @@ function App() {
             </Button>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {FEATURED_ARTWORKS.map((art) => (
-              <div 
-                key={art.id} 
-                className="group relative aspect-[4/3] cursor-pointer overflow-hidden rounded-2xl bg-gray-200 shadow-sm transition-all hover:shadow-xl hover:-translate-y-1"
-                onClick={() => setSelectedImage(art.url)}
-              >
-                {/* Image */}
-                <img 
-                  src={art.url} 
-                  alt={art.title}
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                
-                {/* Overlay Details */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                <div className="absolute bottom-0 left-0 p-6 text-white opacity-0 transition-all duration-300 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0">
-                  <p className="text-sm font-medium text-white/80 mb-1">{art.category}</p>
-                  <h3 className="text-xl font-semibold">{art.title}</h3>
-                </div>
+          <div className="flex flex-col gap-6">
+            {/* Main Focused Image */}
+            <div 
+              className="group relative aspect-video w-full cursor-pointer overflow-hidden rounded-2xl bg-gray-200 shadow-lg"
+              onClick={() => setSelectedImage(ALL_ARTWORKS[currentWorkIndex].url)}
+            >
+              <img 
+                src={ALL_ARTWORKS[currentWorkIndex].url} 
+                alt={ALL_ARTWORKS[currentWorkIndex].title}
+                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80" />
+              
+              {/* Text Content */}
+              <div className="absolute bottom-0 left-0 p-6 md:p-10 text-white">
+                <p className="text-sm md:text-base font-medium text-blue-300 mb-2">{ALL_ARTWORKS[currentWorkIndex].category}</p>
+                <h3 className="text-2xl md:text-4xl font-bold tracking-tight mb-2">{ALL_ARTWORKS[currentWorkIndex].title}</h3>
               </div>
-            ))}
+
+              {/* Navigation Arrows */}
+              <div className="absolute inset-0 flex items-center justify-between p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <Button 
+                  variant="ghost" 
+                  size="icon" 
+                  className="h-12 w-12 rounded-full bg-black/20 text-white backdrop-blur-md hover:bg-black/40 hover:text-white border border-white/10"
+                  onClick={(e) => { e.stopPropagation(); prevWork(); }}
+                >
+                  <ChevronLeft className="h-6 w-6" />
+                </Button>
+                <Button 
+                  variant="ghost" 
+                  size="icon" 
+                  className="h-12 w-12 rounded-full bg-black/20 text-white backdrop-blur-md hover:bg-black/40 hover:text-white border border-white/10"
+                  onClick={(e) => { e.stopPropagation(); nextWork(); }}
+                >
+                  <ChevronRight className="h-6 w-6" />
+                </Button>
+              </div>
+            </div>
+
+            {/* Thumbnails Grid */}
+            <div className="grid grid-cols-5 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-2 px-1">
+              {ALL_ARTWORKS.map((art, idx) => (
+                <div 
+                  key={art.id} 
+                  className={`group relative aspect-square cursor-pointer overflow-hidden rounded-lg transition-all duration-300 ${
+                    idx === currentWorkIndex 
+                      ? "ring-2 ring-blue-500 ring-offset-2 scale-95 opacity-100" 
+                      : "opacity-40 hover:opacity-100 hover:scale-105 grayscale hover:grayscale-0"
+                  }`}
+                  onClick={() => setCurrentWorkIndex(idx)}
+                >
+                  <img 
+                    src={art.url} 
+                    alt={art.title}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
