@@ -29,18 +29,18 @@ function App() {
             Specialized in photorealistic texturing and material creation using Substance Painter.
           </p>
           <div className="flex justify-center gap-4">
-            <Button size="lg" className="rounded-full text-base">
-              View Projects
+            <Button size="lg" className="rounded-full text-base" asChild>
+              <a href="#work">View Projects</a>
             </Button>
-            <Button size="lg" variant="outline" className="rounded-full text-base">
-              Contact Me
+            <Button size="lg" variant="outline" className="rounded-full text-base" asChild>
+              <a href="#contact">Contact Me</a>
             </Button>
           </div>
         </div>
       </section>
 
       {/* GALLERY SECTION */}
-      <section className="py-20 bg-gray-50/50">
+      <section id="work" className="py-20 bg-gray-50/50">
         <div className="container mx-auto px-4 md:px-8">
           <div className="flex items-center justify-between mb-12">
             <h2 className="text-2xl font-semibold tracking-tight">Selected Works</h2>
@@ -67,6 +67,40 @@ function App() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ABOUT SECTION */}
+      <section id="about" className="py-20 px-4">
+        <div className="container mx-auto max-w-3xl text-center">
+          <h2 className="text-3xl font-semibold tracking-tight mb-8">About Me</h2>
+          <div className="prose prose-lg mx-auto text-gray-600">
+            <p className="text-xl leading-relaxed mb-6">
+              My name is Thayika Petchnui. I am from Thailand.
+            </p>
+            <p className="text-lg leading-relaxed">
+              I specialize in texturing and material creation. 
+              Always eager to learn new technologies and improve my artistic skills.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* CONTACT SECTION */}
+      <section id="contact" className="py-20 bg-gray-50/50">
+        <div className="container mx-auto max-w-3xl text-center px-4">
+          <h2 className="text-3xl font-semibold tracking-tight mb-8">Contact</h2>
+          <div className="flex flex-col items-center justify-center gap-4">
+            <p className="text-xl text-gray-500">
+              Feel free to reach out to me via email:
+            </p>
+            <a 
+              href="mailto:pethayika@gmail.com" 
+              className="text-2xl md:text-3xl font-medium text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+            >
+              pethayika@gmail.com
+            </a>
           </div>
         </div>
       </section>
