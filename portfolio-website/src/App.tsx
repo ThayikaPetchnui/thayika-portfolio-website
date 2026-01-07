@@ -99,51 +99,9 @@ function App() {
     <div className="min-h-screen bg-white text-slate-900 selection:bg-blue-100 selection:text-blue-900">
       <Navbar />
       
-      {/* HERO SECTION */}
-      <section className="pt-32 pb-20 md:pt-48 md:pb-32 px-4">
-        <div className="container mx-auto max-w-4xl text-center">
-          <FadeIn>
-            <div className="inline-flex items-center rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs font-medium text-gray-600 mb-6">
-              <span className="flex h-2 w-2 rounded-full bg-blue-500 mr-2"></span>
-              Available for Freelance
-            </div>
-          </FadeIn>
-          <FadeIn delay={200}>
-            <h1 className="text-5xl md:text-7xl font-semibold tracking-tighter mb-6 bg-gradient-to-b from-black to-black/70 bg-clip-text text-transparent">
-              Digital craftsmanship.
-            </h1>
-          </FadeIn>
-          <FadeIn delay={400}>
-            <p className="text-xl text-gray-500 md:text-2xl max-w-2xl mx-auto mb-10 leading-relaxed">
-              Specialized in photorealistic texturing and material creation using Substance Painter.
-            </p>
-          </FadeIn>
-          <FadeIn delay={600}>
-            <div className="flex justify-center gap-4">
-              <Button size="lg" className="rounded-full text-base" asChild>
-                <a href="#work">View Projects</a>
-              </Button>
-              <Button size="lg" variant="outline" className="rounded-full text-base" asChild>
-                <a href="#contact">Contact Me</a>
-              </Button>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
       {/* GALLERY SECTION */}
-      <section id="work" className="py-20 bg-gray-50/50">
+      <section id="work" className="pt-32 pb-20 bg-gray-50/50">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="flex items-center justify-between mb-12">
-            <h2 className="text-2xl font-semibold tracking-tight">Selected Works</h2>
-            <Button 
-              variant="ghost" 
-              className="text-muted-foreground cursor-pointer"
-              onClick={() => setIsGalleryOpen(true)}
-            >
-              View All <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-          </div>
           
           <div className="flex flex-col gap-6">
             {/* Main Focused Image */}
@@ -187,6 +145,17 @@ function App() {
               </div>
             </div>
 
+            <div className="flex items-center justify-between max-w-4xl mx-auto w-full">
+              <h2 className="text-2xl font-semibold tracking-tight">Selected Works</h2>
+              <Button 
+                variant="ghost" 
+                className="text-muted-foreground cursor-pointer"
+                onClick={() => setIsGalleryOpen(true)}
+              >
+                View All <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </div>
+
             {/* Thumbnails Grid */}
             <div className="grid grid-cols-5 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-2 px-1">
               {FEATURED_ARTWORKS.map((art, idx) => (
@@ -208,6 +177,38 @@ function App() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* HERO SECTION */}
+      <section className="py-20 md:py-32 px-4">
+        <div className="container mx-auto max-w-4xl text-center">
+          <FadeIn>
+            <div className="inline-flex items-center rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs font-medium text-gray-600 mb-6">
+              <span className="flex h-2 w-2 rounded-full bg-blue-500 mr-2"></span>
+              Available for Freelance
+            </div>
+          </FadeIn>
+          <FadeIn delay={200}>
+            <h1 className="text-5xl md:text-7xl font-semibold tracking-tighter mb-6 bg-gradient-to-b from-black to-black/70 bg-clip-text text-transparent">
+              Digital craftsmanship.
+            </h1>
+          </FadeIn>
+          <FadeIn delay={400}>
+            <p className="text-xl text-gray-500 md:text-2xl max-w-2xl mx-auto mb-10 leading-relaxed">
+              Specialized in photorealistic texturing and material creation using Substance Painter.
+            </p>
+          </FadeIn>
+          <FadeIn delay={600}>
+            <div className="flex justify-center gap-4">
+              <Button size="lg" className="rounded-full text-base" asChild>
+                <a href="#work">View Projects</a>
+              </Button>
+              <Button size="lg" variant="outline" className="rounded-full text-base" asChild>
+                <a href="#contact">Contact Me</a>
+              </Button>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
