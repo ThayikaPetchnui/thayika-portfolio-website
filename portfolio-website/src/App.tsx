@@ -371,8 +371,8 @@ function App() {
             </div>
 
             {/* Right Side: Profile Picture */}
-            <div className="w-full md:w-1/2 flex justify-center md:justify-start">
-              <div className="relative aspect-[3/4] w-full max-w-xs overflow-hidden rounded-2xl shadow-2xl ring-1 ring-gray-100">
+            <div className="w-full md:w-1/2 flex justify-center md:justify-end">
+              <div className="relative aspect-[3/4] w-full max-w-md overflow-hidden rounded-2xl shadow-2xl ring-1 ring-gray-100">
                 <img 
                   src="/thayika-profile-picture.png" 
                   alt="Thayika" 
