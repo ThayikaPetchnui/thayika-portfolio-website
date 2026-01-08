@@ -435,7 +435,7 @@ function App() {
             </p>
             <a 
               href="mailto:pethayika@gmail.com" 
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-xl md:text-2xl font-medium shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-xl md:text-2xl font-medium text-slate-900 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
             >
               <Mail className="h-5 w-5 md:h-6 md:w-6" />
               pethayika@gmail.com

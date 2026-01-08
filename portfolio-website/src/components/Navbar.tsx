@@ -18,7 +18,7 @@ const NavLink = ({ href, children }: { href: string; children: React.ReactNode }
       <span className="relative z-10">{children}</span>
       <span
         className={cn(
-          "absolute inset-0 z-0 rounded-full bg-black/10 transition-all duration-500 ease-out",
+          "absolute inset-0 z-0 rounded-full bg-white transition-all duration-500 ease-out",
           isActive ? "scale-100 opacity-100" : "scale-50 opacity-0"
         )}
       />
