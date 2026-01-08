@@ -157,7 +157,7 @@ function App() {
                   </div>
                 </FadeIn>
                 <TextReveal delay={200}>
-                  <h1 className="text-6xl md:text-8xl lg:text-[7rem] font-normal tracking-tighter leading-[0.9] text-black">
+                  <h1 className="text-4xl md:text-6xl lg:text-[5rem] font-normal tracking-tighter leading-[0.9] text-black">
                     Digital <br /> craftsmanship.
                   </h1>
                 </TextReveal>
