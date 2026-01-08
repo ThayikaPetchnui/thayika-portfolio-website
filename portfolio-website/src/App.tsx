@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, type ReactNode } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Box, Mail, X, ChevronLeft, ChevronRight, Brush, Palette, Layers, Zap, Monitor } from "lucide-react";
+import { ArrowRight, Mail, X, ChevronLeft, ChevronRight, Brush, Palette, Layers, Gamepad2 } from "lucide-react";
 
 // Simple fade-in animation component
 const FadeIn = ({ children, delay = 0, className = "" }: { children: ReactNode, delay?: number, className?: string }) => {
@@ -111,9 +111,8 @@ const SKILLS = [
   { name: "Photorealistic Texturing", icon: Brush, color: "text-pink-500" },
   { name: "Material Creation", icon: Palette, color: "text-purple-500" },
   { name: "PBR Workflows", icon: Layers, color: "text-blue-500" },
-  { name: "Hard Surface", icon: Box, color: "text-emerald-500" },
-  { name: "Asset Optimization", icon: Zap, color: "text-amber-500" },
-  { name: "Real-time Rendering", icon: Monitor, color: "text-cyan-500" },
+  { name: "Export for Game Engines", icon: Gamepad2, color: "text-orange-500" },
+  { name: "Export for Unity", image: "https://cdn.simpleicons.org/unity" },
 ];
 
 function App() {
