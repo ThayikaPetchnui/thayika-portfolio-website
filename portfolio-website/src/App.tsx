@@ -115,6 +115,10 @@ const REGULAR_ARTWORKS = [
   { id: 31, title: "Arctic Stripe", category: "Weapon Skin", model: "FragGrenade", url: "/assets/featured/FragGrenade_ArcticStripe.png" },
   { id: 32, title: "Eder22 Cybercat", category: "Weapon Skin", model: "Eder22", url: "/assets/featured/Eder22_Cybercat.png" },
   { id: 33, title: "Eder22 Grizzly", category: "Weapon Skin", model: "Eder22", url: "/assets/featured/Eder22_Grizzly.png" },
+  { id: 34, title: "P350 Howl", category: "Weapon Skin", model: "P350", url: "/assets/featured/P350_Howl.png" },
+  { id: 35, title: "P350 Silver", category: "Weapon Skin", model: "P350", url: "/assets/featured/P350_Silver.png" },
+  { id: 36, title: "P350 Stellar", category: "Weapon Skin", model: "P350", url: "/assets/featured/P350_Stellar.png" },
+  { id: 37, title: "P350 Werewolf", category: "Weapon Skin", model: "P350", url: "/assets/featured/P350_Werewolf.png" },
 ];
 
 const ALL_ARTWORKS = [...FEATURED_ARTWORKS, ...REGULAR_ARTWORKS];
@@ -312,7 +316,7 @@ function App() {
                  </Button>
               </div>
               <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
-                {["All", "AK47", "MM4A1", "FragGrenade", "Eder22"].map((category) => (
+                {["All", "AK47", "MM4A1", "FragGrenade", "Eder22", "P350"].map((category) => (
                   <Button
                     key={category}
                     variant={selectedCategory === category ? "default" : "outline"}
