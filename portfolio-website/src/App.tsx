@@ -109,6 +109,10 @@ const REGULAR_ARTWORKS = [
   { id: 25, title: "MM4A1 Ronin", category: "Weapon Skin", model: "MM4A1", url: "/assets/MM4A1_Ronin.png" },
   { id: 26, title: "MM4A1 Sakura", category: "Weapon Skin", model: "MM4A1", url: "/assets/MM4A1_Sakura.png" },
   { id: 27, title: "MM4A1 Sunset", category: "Weapon Skin", model: "MM4A1", url: "/assets/MM4A1_Sunset.png" },
+  { id: 28, title: "Woodland Stripe", category: "Weapon Skin", model: "FragGrenade", url: "/assets/featured/FragGrenade_WoodlandStripe.png" },
+  { id: 29, title: "Woodland Digital", category: "Weapon Skin", model: "FragGrenade", url: "/assets/featured/FragGrenade_WoodlandDigital.png" },
+  { id: 30, title: "Desert Stripe", category: "Weapon Skin", model: "FragGrenade", url: "/assets/featured/FragGrenade_DesertStripe.png" },
+  { id: 31, title: "Arctic Stripe", category: "Weapon Skin", model: "FragGrenade", url: "/assets/featured/FragGrenade_ArcticStripe.png" },
 ];
 
 const ALL_ARTWORKS = [...FEATURED_ARTWORKS, ...REGULAR_ARTWORKS];
