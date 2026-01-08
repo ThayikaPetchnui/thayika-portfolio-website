@@ -176,7 +176,7 @@ function App() {
                 </TextReveal>
                 <FadeIn delay={350}>
                   <p className="text-lg md:text-xl text-gray-600 mt-6 font-medium">
-                    Weapons, materials, and surfaces for AAA-quality games.
+                    Materials and textures for AAA-quality games.
                   </p>
                 </FadeIn>
               </div>
@@ -185,7 +185,7 @@ function App() {
               <div className="flex flex-col md:flex-row gap-8 items-start">
                 <FadeIn delay={500} className="flex-1 max-w-lg pt-2">
                   <p className="text-base leading-relaxed text-gray-700 font-medium mb-8 text-justify">
-                    Specialized in photorealistic texturing and material creation using Substance Painter.
+                    Specialized in PBR texturing and material creation using Substance Painter.
                   </p>
                   <div className="flex gap-4">
                     <Button size="lg" className="rounded-full" asChild>
