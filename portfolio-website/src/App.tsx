@@ -197,7 +197,7 @@ function App() {
           <div className="w-full md:w-1/2 order-1 md:order-2">
             <FadeIn delay={0} className="w-full">
               <div className="relative rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-gray-900/10 bg-black">
-                <img src="/assets/MM4A1_Ronin.png" alt="Main Work" className="w-full h-auto object-cover" />
+                <img src="/assets/MM4A1_Sunset.png" alt="Main Work" className="w-full h-auto object-cover" />
               </div>
             </FadeIn>
           </div>
