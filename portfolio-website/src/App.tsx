@@ -141,39 +141,63 @@ function App() {
       <Navbar />
       
       {/* HERO SECTION */}
-      <section className="relative pt-32 pb-20 md:py-32 px-4 overflow-hidden">
-        {/* Background Images */}
-        <div className="absolute inset-0 -z-10 flex items-center justify-center opacity-15 pointer-events-none select-none">
-          <img src="/assets/MM4A1_Ronin.png" alt="" className="w-[1000px] object-contain" />
-        </div>
+      <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 px-4 overflow-hidden">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            
+            {/* Left Column */}
+            <div className="lg:col-span-7 flex flex-col gap-12 md:gap-20">
+              
+              {/* Top: Heading */}
+              <div>
+                <FadeIn>
+                   <div className="inline-flex items-center rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs font-medium text-gray-600 mb-6">
+                    <span className="flex h-2 w-2 rounded-full bg-blue-500 mr-2"></span>
+                    Available for Freelance
+                  </div>
+                </FadeIn>
+                <TextReveal delay={200}>
+                  <h1 className="text-6xl md:text-8xl lg:text-[7rem] font-normal tracking-tighter leading-[0.9] text-black">
+                    Digital <br /> craftsmanship.
+                  </h1>
+                </TextReveal>
+              </div>
 
-        <div className="container mx-auto max-w-4xl text-center relative z-10">
-          <FadeIn>
-            <div className="inline-flex items-center rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs font-medium text-gray-600 mb-6">
-              <span className="flex h-2 w-2 rounded-full bg-blue-500 mr-2"></span>
-              Available for Freelance
+              {/* Bottom: Image + Text */}
+              <div className="flex flex-col md:flex-row gap-8 items-start">
+                <FadeIn delay={400} className="w-full md:w-48 shrink-0">
+                  <div className="aspect-[3/4] overflow-hidden rounded-sm bg-gray-200">
+                     <img src="/assets/MM4A1_Moonveil.png" alt="Detail" className="h-full w-full object-cover" />
+                  </div>
+                </FadeIn>
+                
+                <FadeIn delay={500} className="flex-1 max-w-lg pt-2">
+                  <p className="text-lg leading-relaxed text-gray-700 font-medium mb-8 text-justify">
+                    Specialized in photorealistic texturing and material creation using Substance Painter.
+                  </p>
+                  <div className="flex gap-4">
+                    <Button size="lg" className="rounded-full" asChild>
+                      <a href="#work">View Projects</a>
+                    </Button>
+                    <Button size="lg" variant="outline" className="rounded-full" asChild>
+                      <a href="#contact">Contact Me</a>
+                    </Button>
+                  </div>
+                </FadeIn>
+              </div>
+
             </div>
-          </FadeIn>
-          <TextReveal delay={200} className="mb-6">
-            <h1 className="text-5xl md:text-7xl font-semibold tracking-tighter bg-gradient-to-b from-black to-black/70 bg-clip-text text-transparent pb-1">
-              Digital craftsmanship.
-            </h1>
-          </TextReveal>
-          <FadeIn delay={400}>
-            <p className="text-xl text-gray-500 md:text-2xl max-w-2xl mx-auto mb-10 leading-relaxed">
-              Specialized in photorealistic texturing and material creation using Substance Painter.
-            </p>
-          </FadeIn>
-          <FadeIn delay={600}>
-            <div className="flex justify-center gap-4">
-              <Button size="lg" className="rounded-full text-base" asChild>
-                <a href="#work">View Projects</a>
-              </Button>
-              <Button size="lg" variant="outline" className="rounded-full text-base" asChild>
-                <a href="#contact">Contact Me</a>
-              </Button>
+
+            {/* Right Column: Large Image */}
+            <div className="lg:col-span-5 relative">
+              <FadeIn delay={300}>
+                <div className="aspect-[4/5] lg:aspect-[3/4] w-full overflow-hidden rounded-sm bg-gray-200">
+                  <img src="/assets/MM4A1_Ronin.png" alt="Main Work" className="h-full w-full object-cover" />
+                </div>
+              </FadeIn>
             </div>
-          </FadeIn>
+            
+          </div>
         </div>
       </section>
 
