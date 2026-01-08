@@ -421,7 +421,7 @@ function App() {
       </section>
 
       {/* CONTACT SECTION */}
-      <section id="contact" className="py-20">
+      <section id="contact" className="py-20 border-t border-white">
         <div className="container mx-auto max-w-3xl text-center px-4">
           <h2 className="text-3xl font-semibold tracking-tight mb-8">Contact</h2>
           <div className="flex flex-col items-center justify-center gap-4">
