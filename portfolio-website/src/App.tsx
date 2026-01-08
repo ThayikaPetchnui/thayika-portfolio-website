@@ -113,6 +113,8 @@ const REGULAR_ARTWORKS = [
   { id: 29, title: "Woodland Digital", category: "Weapon Skin", model: "FragGrenade", url: "/assets/featured/FragGrenade_WoodlandDigital.png" },
   { id: 30, title: "Desert Stripe", category: "Weapon Skin", model: "FragGrenade", url: "/assets/featured/FragGrenade_DesertStripe.png" },
   { id: 31, title: "Arctic Stripe", category: "Weapon Skin", model: "FragGrenade", url: "/assets/featured/FragGrenade_ArcticStripe.png" },
+  { id: 32, title: "Eder22 Cybercat", category: "Weapon Skin", model: "Eder22", url: "/assets/featured/Eder22_Cybercat.png" },
+  { id: 33, title: "Eder22 Grizzly", category: "Weapon Skin", model: "Eder22", url: "/assets/featured/Eder22_Grizzly.png" },
 ];
 
 const ALL_ARTWORKS = [...FEATURED_ARTWORKS, ...REGULAR_ARTWORKS];
