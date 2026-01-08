@@ -123,6 +123,19 @@ function App() {
 
   useEffect(() => {
     document.title = "Thayika - Portfolio";
+
+    // Set favicon
+    const link = document.querySelector("link[rel~='icon']") as HTMLLinkElement | null;
+    if (link) {
+      link.href = '/favicon.svg';
+      link.type = 'image/svg+xml';
+    } else {
+      const newLink = document.createElement('link');
+      newLink.rel = 'icon';
+      newLink.href = '/favicon.svg';
+      newLink.type = 'image/svg+xml';
+      document.head.appendChild(newLink);
+    }
   }, []);
 
   // Auto-cycle works
