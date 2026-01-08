@@ -62,46 +62,53 @@ const TextReveal = ({ children, delay = 0, className = "" }: { children: ReactNo
 
 // Featured assets for the main view
 const FEATURED_ARTWORKS = [
-  { id: 101, title: "Neon Dragon", category: "Featured Skin", url: "/assets/featured/AK47_NeonDragon.png" },
-  { id: 102, title: "Paint Splash", category: "Featured Skin", url: "/assets/featured/AK47_Paint.png" },
-  { id: 103, title: "Ocean Paint", category: "Featured Skin", url: "/assets/featured/AK47_PaintOcean.png" },
-  { id: 104, title: "Pink Wall", category: "Featured Skin", url: "/assets/featured/AK47_PinkWall.png" },
-  { id: 105, title: "Queen", category: "Featured Skin", url: "/assets/featured/AK47_Queen.png" },
-  { id: 106, title: "Rainbow", category: "Featured Skin", url: "/assets/featured/AK47_Rainbow.png" },
-  { id: 107, title: "Red Zebra", category: "Featured Skin", url: "/assets/featured/AK47_RedZebra.png" },
-  { id: 108, title: "Skull Army", category: "Featured Skin", url: "/assets/featured/AK47_SkullArmy.png" },
-  { id: 109, title: "Spray Paint", category: "Featured Skin", url: "/assets/featured/AK47_Spray.png" },
-  { id: 110, title: "Thunderbird", category: "Featured Skin", url: "/assets/featured/AK47_Thunderbird.png" },
-  { id: 111, title: "Water Element", category: "Featured Skin", url: "/assets/featured/AK47_Water.png" },
-  { id: 112, title: "XX Design", category: "Featured Skin", url: "/assets/featured/AK47_XX.png" },
-  { id: 113, title: "Yellow Abstract", category: "Featured Skin", url: "/assets/featured/AK47_YellowAbstract.png" },
-  { id: 114, title: "Yellow Zebra", category: "Featured Skin", url: "/assets/featured/AK47_YellowZebra.png" },
-  { id: 115, title: "Skulls", category: "Featured Skin", url: "/assets/featured/Ak47_Skulls.png" },
+  { id: 101, title: "Neon Dragon", category: "Featured Skin", model: "AK47", url: "/assets/featured/AK47_NeonDragon.png" },
+  { id: 102, title: "Paint Splash", category: "Featured Skin", model: "AK47", url: "/assets/featured/AK47_Paint.png" },
+  { id: 103, title: "Ocean Paint", category: "Featured Skin", model: "AK47", url: "/assets/featured/AK47_PaintOcean.png" },
+  { id: 104, title: "Pink Wall", category: "Featured Skin", model: "AK47", url: "/assets/featured/AK47_PinkWall.png" },
+  { id: 105, title: "Queen", category: "Featured Skin", model: "AK47", url: "/assets/featured/AK47_Queen.png" },
+  { id: 106, title: "Rainbow", category: "Featured Skin", model: "AK47", url: "/assets/featured/AK47_Rainbow.png" },
+  { id: 107, title: "Red Zebra", category: "Featured Skin", model: "AK47", url: "/assets/featured/AK47_RedZebra.png" },
+  { id: 108, title: "Skull Army", category: "Featured Skin", model: "AK47", url: "/assets/featured/AK47_SkullArmy.png" },
+  { id: 109, title: "Spray Paint", category: "Featured Skin", model: "AK47", url: "/assets/featured/AK47_Spray.png" },
+  { id: 110, title: "Thunderbird", category: "Featured Skin", model: "AK47", url: "/assets/featured/AK47_Thunderbird.png" },
+  { id: 111, title: "Water Element", category: "Featured Skin", model: "AK47", url: "/assets/featured/AK47_Water.png" },
+  { id: 112, title: "XX Design", category: "Featured Skin", model: "AK47", url: "/assets/featured/AK47_XX.png" },
+  { id: 113, title: "Yellow Abstract", category: "Featured Skin", model: "AK47", url: "/assets/featured/AK47_YellowAbstract.png" },
+  { id: 114, title: "Yellow Zebra", category: "Featured Skin", model: "AK47", url: "/assets/featured/AK47_YellowZebra.png" },
+  { id: 115, title: "Skulls", category: "Featured Skin", model: "AK47", url: "/assets/featured/Ak47_Skulls.png" },
 ];
 
 // Regular assets
 const REGULAR_ARTWORKS = [
-  { id: 1, title: "Arctic Digital AK47", category: "Weapon Skin", url: "/assets/AK47_ArcticDigital3.png" },
-  { id: 2, title: "Arctic Stripe 2", category: "Weapon Skin", url: "/assets/AK47_ArcticStripe2.png" },
-  { id: 3, title: "Arctic Stripe 3", category: "Weapon Skin", url: "/assets/AK47_ArcticStripe3.png" },
-  { id: 4, title: "Arctic Stripe 4", category: "Weapon Skin", url: "/assets/AK47_ArcticStripe4.png" },
-  { id: 5, title: "Arctic Stripe 5", category: "Weapon Skin", url: "/assets/AK47_ArcticStripe5.png" },
-  { id: 6, title: "Arctic Stripe 6", category: "Weapon Skin", url: "/assets/AK47_ArcticStripe6.png" },
-  { id: 7, title: "Arctic Stripe 7", category: "Weapon Skin", url: "/assets/AK47_ArcticStripe7.png" },
-  { id: 8, title: "Arctic Stripe 8", category: "Weapon Skin", url: "/assets/AK47_ArcticStripe8.png" },
-  { id: 9, title: "Arctic Stripe 9", category: "Weapon Skin", url: "/assets/AK47_ArcticStripe9.png" },
-  { id: 10, title: "Desert Camo AK47", category: "Weapon Skin", url: "/assets/AK47_Desert.png" },
-  { id: 11, title: "Desert Stripe 11", category: "Weapon Skin", url: "/assets/AK47_DesertStripe11.png" },
-  { id: 12, title: "Desert Stripe 12", category: "Weapon Skin", url: "/assets/AK47_DesertStripe12.png" },
-  { id: 13, title: "Desert Stripe 13", category: "Weapon Skin", url: "/assets/AK47_DesertStripe13.png" },
-  { id: 14, title: "Desert Stripe 14", category: "Weapon Skin", url: "/assets/AK47_DesertStripe14.png" },
-  { id: 15, title: "Desert Stripe 15", category: "Weapon Skin", url: "/assets/AK47_DesertStripe15.png" },
-  { id: 16, title: "Desert Yellow AK47", category: "Weapon Skin", url: "/assets/AK47_Desert_Yellow.png" },
-  { id: 17, title: "Desert Yellow Light", category: "Weapon Skin", url: "/assets/AK47_Desert_Yellowlight.png" },
-  { id: 18, title: "Woodland Stripe 1", category: "Weapon Skin", url: "/assets/AK47_WoodlandStripe1.png" },
-  { id: 19, title: "Woodland Stripe 3", category: "Weapon Skin", url: "/assets/AK47_WoodlandStripe3.png" },
-  { id: 20, title: "Woodland Stripe 4", category: "Weapon Skin", url: "/assets/AK47_WoodlandStripe4.png" },
-  { id: 21, title: "Woodland Stripe 5", category: "Weapon Skin", url: "/assets/AK47_WoodlandStripe5.png" },
+  { id: 1, title: "Arctic Digital AK47", category: "Weapon Skin", model: "AK47", url: "/assets/AK47_ArcticDigital3.png" },
+  { id: 2, title: "Arctic Stripe 2", category: "Weapon Skin", model: "AK47", url: "/assets/AK47_ArcticStripe2.png" },
+  { id: 3, title: "Arctic Stripe 3", category: "Weapon Skin", model: "AK47", url: "/assets/AK47_ArcticStripe3.png" },
+  { id: 4, title: "Arctic Stripe 4", category: "Weapon Skin", model: "AK47", url: "/assets/AK47_ArcticStripe4.png" },
+  { id: 5, title: "Arctic Stripe 5", category: "Weapon Skin", model: "AK47", url: "/assets/AK47_ArcticStripe5.png" },
+  { id: 6, title: "Arctic Stripe 6", category: "Weapon Skin", model: "AK47", url: "/assets/AK47_ArcticStripe6.png" },
+  { id: 7, title: "Arctic Stripe 7", category: "Weapon Skin", model: "AK47", url: "/assets/AK47_ArcticStripe7.png" },
+  { id: 8, title: "Arctic Stripe 8", category: "Weapon Skin", model: "AK47", url: "/assets/AK47_ArcticStripe8.png" },
+  { id: 9, title: "Arctic Stripe 9", category: "Weapon Skin", model: "AK47", url: "/assets/AK47_ArcticStripe9.png" },
+  { id: 10, title: "Desert Camo AK47", category: "Weapon Skin", model: "AK47", url: "/assets/AK47_Desert.png" },
+  { id: 11, title: "Desert Stripe 11", category: "Weapon Skin", model: "AK47", url: "/assets/AK47_DesertStripe11.png" },
+  { id: 12, title: "Desert Stripe 12", category: "Weapon Skin", model: "AK47", url: "/assets/AK47_DesertStripe12.png" },
+  { id: 13, title: "Desert Stripe 13", category: "Weapon Skin", model: "AK47", url: "/assets/AK47_DesertStripe13.png" },
+  { id: 14, title: "Desert Stripe 14", category: "Weapon Skin", model: "AK47", url: "/assets/AK47_DesertStripe14.png" },
+  { id: 15, title: "Desert Stripe 15", category: "Weapon Skin", model: "AK47", url: "/assets/AK47_DesertStripe15.png" },
+  { id: 16, title: "Desert Yellow AK47", category: "Weapon Skin", model: "AK47", url: "/assets/AK47_Desert_Yellow.png" },
+  { id: 17, title: "Desert Yellow Light", category: "Weapon Skin", model: "AK47", url: "/assets/AK47_Desert_Yellowlight.png" },
+  { id: 18, title: "Woodland Stripe 1", category: "Weapon Skin", model: "AK47", url: "/assets/AK47_WoodlandStripe1.png" },
+  { id: 19, title: "Woodland Stripe 3", category: "Weapon Skin", model: "AK47", url: "/assets/AK47_WoodlandStripe3.png" },
+  { id: 20, title: "Woodland Stripe 4", category: "Weapon Skin", model: "AK47", url: "/assets/AK47_WoodlandStripe4.png" },
+  { id: 21, title: "Woodland Stripe 5", category: "Weapon Skin", model: "AK47", url: "/assets/AK47_WoodlandStripe5.png" },
+  // New MM4A1 items
+  { id: 22, title: "MM4A1 Alpha", category: "Weapon Skin", model: "MM4A1", url: "/assets/MM4A1_Alpha.png" },
+  { id: 23, title: "MM4A1 Echo", category: "Weapon Skin", model: "MM4A1", url: "/assets/MM4A1_Echo.png" },
+  { id: 24, title: "MM4A1 Moonveil", category: "Weapon Skin", model: "MM4A1", url: "/assets/MM4A1_Moonveil.png" },
+  { id: 25, title: "MM4A1 Ronin", category: "Weapon Skin", model: "MM4A1", url: "/assets/MM4A1_Ronin.png" },
+  { id: 26, title: "MM4A1 Sakura", category: "Weapon Skin", model: "MM4A1", url: "/assets/MM4A1_Sakura.png" },
+  { id: 27, title: "MM4A1 Sunset", category: "Weapon Skin", model: "MM4A1", url: "/assets/MM4A1_Sunset.png" },
 ];
 
 const ALL_ARTWORKS = [...FEATURED_ARTWORKS, ...REGULAR_ARTWORKS];
@@ -120,6 +127,7 @@ function App() {
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [currentWorkIndex, setCurrentWorkIndex] = useState(0);
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
   useEffect(() => {
     document.title = "Thayika - Portfolio";
@@ -290,14 +298,30 @@ function App() {
       {isGalleryOpen && (
         <div className="fixed inset-0 z-[60] bg-white overflow-y-auto animate-in fade-in duration-200">
           <div className="container mx-auto px-4 py-8">
-            <div className="flex justify-between items-center mb-8 sticky top-0 bg-white z-10 py-4 border-b border-gray-100">
-               <h2 className="text-3xl font-bold tracking-tight">All Works</h2>
-               <Button variant="ghost" size="icon" onClick={() => setIsGalleryOpen(false)} className="rounded-full hover:bg-gray-100">
-                 <X className="h-6 w-6" />
-               </Button>
+            <div className="flex flex-col gap-4 mb-8 sticky top-0 bg-white z-10 py-4 border-b border-gray-100">
+              <div className="flex justify-between items-center">
+                 <h2 className="text-3xl font-bold tracking-tight">All Works</h2>
+                 <Button variant="ghost" size="icon" onClick={() => setIsGalleryOpen(false)} className="rounded-full hover:bg-gray-100">
+                   <X className="h-6 w-6" />
+                 </Button>
+              </div>
+              <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+                {["All", "AK47", "MM4A1", "FragGrenade", "Eder22"].map((category) => (
+                  <Button
+                    key={category}
+                    variant={selectedCategory === category ? "default" : "outline"}
+                    onClick={() => setSelectedCategory(category)}
+                    className="rounded-full whitespace-nowrap"
+                  >
+                    {category}
+                  </Button>
+                ))}
+              </div>
             </div>
             <div className="grid grid-cols-5 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-2 pb-12">
-              {ALL_ARTWORKS.map((art) => (
+              {ALL_ARTWORKS
+                .filter(art => selectedCategory === "All" || art.model === selectedCategory)
+                .map((art) => (
                 <div 
                   key={art.id} 
                   className="group relative aspect-square cursor-pointer overflow-hidden rounded-lg bg-gray-100 hover:shadow-md transition-all"
