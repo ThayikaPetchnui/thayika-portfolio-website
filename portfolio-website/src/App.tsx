@@ -210,6 +210,17 @@ function App() {
         <div className="container mx-auto px-4 md:px-8">
           
           <div className="flex flex-col gap-6">
+            <div className="flex items-center justify-between max-w-4xl mx-auto w-full">
+              <h2 className="text-2xl font-semibold tracking-tight">Selected Works</h2>
+              <Button 
+                variant="ghost" 
+                className="text-muted-foreground cursor-pointer"
+                onClick={() => setIsGalleryOpen(true)}
+              >
+                View All <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </div>
+
             {/* Main Focused Image */}
             <div 
               className="group relative aspect-video w-full max-w-4xl mx-auto cursor-pointer overflow-hidden rounded-2xl bg-gray-200 shadow-lg"
@@ -249,17 +260,6 @@ function App() {
                   <ChevronRight className="h-6 w-6" />
                 </Button>
               </div>
-            </div>
-
-            <div className="flex items-center justify-between max-w-4xl mx-auto w-full">
-              <h2 className="text-2xl font-semibold tracking-tight">Selected Works</h2>
-              <Button 
-                variant="ghost" 
-                className="text-muted-foreground cursor-pointer"
-                onClick={() => setIsGalleryOpen(true)}
-              >
-                View All <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
             </div>
 
             {/* Thumbnails Grid */}
