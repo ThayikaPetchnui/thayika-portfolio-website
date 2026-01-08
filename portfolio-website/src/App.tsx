@@ -312,9 +312,9 @@ function App() {
 
       {/* FULL GALLERY MODAL */}
       {isGalleryOpen && (
-        <div className="fixed inset-0 z-[60] bg-white overflow-y-auto animate-in fade-in duration-200">
+        <div className="fixed inset-0 z-[60] bg-[#E5E3DF] overflow-y-auto animate-in fade-in duration-200">
           <div className="container mx-auto px-4 py-8">
-            <div className="flex flex-col gap-4 mb-8 sticky top-0 bg-white z-10 py-4 border-b border-gray-100">
+            <div className="flex flex-col gap-4 mb-8 sticky top-0 bg-[#E5E3DF] z-10 py-4 border-b border-gray-100">
               <div className="flex justify-between items-center">
                  <h2 className="text-3xl font-bold tracking-tight">All Works</h2>
                  <Button variant="ghost" size="icon" onClick={() => setIsGalleryOpen(false)} className="rounded-full hover:bg-gray-100">
