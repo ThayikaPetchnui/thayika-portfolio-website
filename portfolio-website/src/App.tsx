@@ -158,7 +158,7 @@ function App() {
         <div className="container mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center gap-12 md:gap-20">
           
           {/* Text Content */}
-          <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left order-2 md:order-1">
+          <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left order-2 md:order-1 md:pl-12">
             <FadeIn delay={200}>
                <div className="inline-flex items-center rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs font-medium text-gray-600 mb-6">
                 <span className="flex h-2 w-2 rounded-full bg-blue-500 mr-2"></span>
