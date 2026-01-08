@@ -196,7 +196,7 @@ function App() {
           {/* Large Image */}
           <div className="w-full md:w-1/2 order-1 md:order-2">
             <FadeIn delay={0} className="w-full">
-              <div className="relative rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-gray-900/10 bg-black">
+              <div className="relative rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-gray-900/10 bg-black md:-translate-x-8">
                 <img src="/assets/MM4A1_Sunset.png" alt="Main Work" className="w-full h-auto object-cover" />
               </div>
             </FadeIn>
