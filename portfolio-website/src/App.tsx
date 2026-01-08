@@ -155,66 +155,48 @@ function App() {
       
       {/* HERO SECTION */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 px-4 overflow-hidden">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            
-            {/* Left Column */}
-            <div className="lg:col-span-6 flex flex-col gap-12 md:gap-20">
-              
-              {/* Top: Heading */}
-              <div>
-                <FadeIn>
-                   <div className="inline-flex items-center rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs font-medium text-gray-600 mb-6">
-                    <span className="flex h-2 w-2 rounded-full bg-blue-500 mr-2"></span>
-                    Available for Freelance
-                  </div>
-                </FadeIn>
-                <TextReveal delay={200}>
-                  <h1 className="text-3xl md:text-5xl lg:text-7xl font-normal tracking-tighter leading-[0.9] text-black">
-                    Digital <br /> craftsmanship.
-                  </h1>
-                </TextReveal>
-                <FadeIn delay={350}>
-                  <p className="text-lg md:text-xl text-gray-600 mt-6 font-medium">
-                    Materials and textures for AAA-quality games.
-                  </p>
-                </FadeIn>
-              </div>
-
-              {/* Bottom: Image + Text */}
-              <div className="flex flex-col md:flex-row gap-8 items-start">
-                <FadeIn delay={500} className="flex-1 max-w-lg pt-2">
-                  <p className="text-base leading-relaxed text-gray-700 font-medium mb-8 text-justify">
-                    Specialized in PBR texturing and material creation using Substance Painter.
-                  </p>
-                  <div className="flex gap-4">
-                    <Button size="lg" className="rounded-full" asChild>
-                      <a href="#work">View Projects</a>
-                    </Button>
-                    <Button size="lg" variant="outline" className="rounded-full" asChild>
-                      <a href="#contact">Contact Me</a>
-                    </Button>
-                  </div>
-                </FadeIn>
-              </div>
-
+        <div className="container mx-auto px-4 md:px-8 flex flex-col items-center text-center">
+          
+          {/* Large Centered Image */}
+          <FadeIn delay={0} className="w-full max-w-6xl mx-auto mb-12">
+            <div className="relative rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-gray-900/10 bg-black">
+              <img src="/assets/MM4A1_Ronin.png" alt="Main Work" className="w-full h-auto object-cover" />
             </div>
+          </FadeIn>
 
-            {/* Right Column: Large Image */}
-            <div className="lg:col-span-6 relative flex justify-center lg:self-center">
-              <FadeIn delay={300} className="w-full">
-                {/* iPad Mockup */}
-                <div className="relative mx-auto w-full">
-                  <div className="relative rounded-[1.5rem] bg-white p-2 shadow-2xl ring-1 ring-gray-900/10">
-                    <div className="aspect-video overflow-hidden rounded-2xl bg-black">
-                      <img src="/assets/MM4A1_Ronin.png" alt="Main Work" className="h-full w-full object-cover" />
-                    </div>
-                  </div>
-                </div>
-              </FadeIn>
+          <FadeIn delay={200}>
+             <div className="inline-flex items-center rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs font-medium text-gray-600 mb-8">
+              <span className="flex h-2 w-2 rounded-full bg-blue-500 mr-2"></span>
+              Available for Freelance
             </div>
-            
-          </div>
+          </FadeIn>
+
+          <TextReveal delay={300} className="w-full flex justify-center">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-normal tracking-tighter leading-[0.9] text-black mb-6 max-w-5xl">
+              Digital craftsmanship.
+            </h1>
+          </TextReveal>
+
+          <FadeIn delay={450} className="w-full flex justify-center">
+            <p className="text-lg md:text-xl text-gray-600 font-medium mb-8 max-w-2xl">
+              Materials and textures for AAA-quality games.
+            </p>
+          </FadeIn>
+
+          <FadeIn delay={600} className="flex flex-col items-center text-center max-w-xl mx-auto mb-16 md:mb-20">
+            <p className="text-base leading-relaxed text-gray-700 font-medium mb-8">
+              Specialized in PBR texturing and material creation using Substance Painter.
+            </p>
+            <div className="flex gap-4">
+              <Button size="lg" className="rounded-full" asChild>
+                <a href="#work">View Projects</a>
+              </Button>
+              <Button size="lg" variant="outline" className="rounded-full" asChild>
+                <a href="#contact">Contact Me</a>
+              </Button>
+            </div>
+          </FadeIn>
+
         </div>
       </section>
 
