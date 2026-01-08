@@ -170,16 +170,21 @@ function App() {
                   </div>
                 </FadeIn>
                 <TextReveal delay={200}>
-                  <h1 className="text-4xl md:text-6xl lg:text-[5rem] font-normal tracking-tighter leading-[0.9] text-black">
+                  <h1 className="text-3xl md:text-5xl lg:text-7xl font-normal tracking-tighter leading-[0.9] text-black">
                     Digital <br /> craftsmanship.
                   </h1>
                 </TextReveal>
+                <FadeIn delay={350}>
+                  <p className="text-lg md:text-xl text-gray-600 mt-6 font-medium">
+                    Weapons, materials, and surfaces for AAA-quality games.
+                  </p>
+                </FadeIn>
               </div>
 
               {/* Bottom: Image + Text */}
               <div className="flex flex-col md:flex-row gap-8 items-start">
                 <FadeIn delay={500} className="flex-1 max-w-lg pt-2">
-                  <p className="text-lg leading-relaxed text-gray-700 font-medium mb-8 text-justify">
+                  <p className="text-base leading-relaxed text-gray-700 font-medium mb-8 text-justify">
                     Specialized in photorealistic texturing and material creation using Substance Painter.
                   </p>
                   <div className="flex gap-4">
@@ -234,8 +239,8 @@ function App() {
               
               {/* Text Content */}
               <div className="absolute bottom-0 left-0 p-6 md:p-10 text-white">
-                <p className="text-sm md:text-base font-medium text-blue-300 mb-2">{FEATURED_ARTWORKS[currentWorkIndex].category}</p>
-                <h3 className="text-2xl md:text-4xl font-bold tracking-tight mb-2">{FEATURED_ARTWORKS[currentWorkIndex].title}</h3>
+                <p className="text-xs md:text-sm font-medium text-blue-300 mb-2">{FEATURED_ARTWORKS[currentWorkIndex].category}</p>
+                <h3 className="text-xl md:text-3xl font-bold tracking-tight mb-2">{FEATURED_ARTWORKS[currentWorkIndex].title}</h3>
               </div>
 
               {/* Navigation Arrows */}
@@ -365,22 +370,22 @@ function App() {
                 </div>
               </FadeIn>
               <FadeIn delay={100}>
-                <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">About Me</h2>
+                <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-6">About Me</h2>
               </FadeIn>
 
               <div className="prose prose-lg text-gray-600 space-y-6 mb-10">
                 <FadeIn delay={200}>
-                  <p className="text-xl md:text-2xl leading-relaxed font-medium text-gray-900">
+                  <p className="text-lg md:text-xl leading-relaxed font-medium text-gray-900">
                     I'm Thayika, a <span className="font-bold">Texture Artist</span> based in Thailand specializing in <span className="font-bold">photorealistic texturing</span> and <span className="font-bold">material creation</span>.
                   </p>
                 </FadeIn>
                 <FadeIn delay={300}>
-                  <p className="text-lg leading-relaxed text-gray-500">
+                  <p className="text-base leading-relaxed text-gray-500">
                     I specialize exclusively in the texturing phase of production. I focus on texturing existing 3D models and transforming them into lifelike assets using <span className="font-bold text-gray-900">Substance Painter</span> for modern PBR workflows, ensuring high-quality results optimized for games and real-time rendering.
                   </p>
                 </FadeIn>
                 <FadeIn delay={400}>
-                  <p className="text-lg leading-relaxed text-gray-500">
+                  <p className="text-base leading-relaxed text-gray-500">
                     I am constantly exploring new technologies to push the boundaries of my artistic capabilities and am currently available for freelance opportunities.
                   </p>
                 </FadeIn>
@@ -430,9 +435,9 @@ function App() {
             </p>
             <a 
               href="mailto:pethayika@gmail.com" 
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-2xl md:text-3xl font-medium shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-xl md:text-2xl font-medium shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
             >
-              <Mail className="h-6 w-6 md:h-8 md:w-8" />
+              <Mail className="h-5 w-5 md:h-6 md:w-6" />
               pethayika@gmail.com
             </a>
           </div>
