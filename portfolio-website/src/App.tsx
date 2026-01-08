@@ -112,7 +112,7 @@ const SKILLS = [
   { name: "Material Creation", icon: Palette, color: "text-purple-500" },
   { name: "PBR Workflows", icon: Layers, color: "text-blue-500" },
   { name: "Export for Game Engines", icon: Gamepad2, color: "text-orange-500" },
-  { name: "Export for Unity", image: "https://cdn.simpleicons.org/unity" },
+  { name: "Export for Unity", image: "/unity-logo-black-and-white.png" },
 ];
 
 function App() {
