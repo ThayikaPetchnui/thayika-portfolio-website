@@ -155,47 +155,52 @@ function App() {
       
       {/* HERO SECTION */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 px-4 overflow-hidden">
-        <div className="container mx-auto px-4 md:px-8 flex flex-col items-center text-center">
+        <div className="container mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center gap-12 md:gap-20">
           
-          {/* Large Centered Image */}
-          <FadeIn delay={0} className="w-full max-w-6xl mx-auto mb-12">
-            <div className="relative rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-gray-900/10 bg-black">
-              <img src="/assets/MM4A1_Ronin.png" alt="Main Work" className="w-full h-auto object-cover" />
-            </div>
-          </FadeIn>
+          {/* Text Content */}
+          <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left order-2 md:order-1">
+            <FadeIn delay={200}>
+               <div className="inline-flex items-center rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs font-medium text-gray-600 mb-6">
+                <span className="flex h-2 w-2 rounded-full bg-blue-500 mr-2"></span>
+                Available for Freelance
+              </div>
+            </FadeIn>
 
-          <FadeIn delay={200}>
-             <div className="inline-flex items-center rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs font-medium text-gray-600 mb-8">
-              <span className="flex h-2 w-2 rounded-full bg-blue-500 mr-2"></span>
-              Available for Freelance
-            </div>
-          </FadeIn>
+            <TextReveal delay={300} className="w-full flex justify-center md:justify-start">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-normal tracking-tighter leading-[0.9] text-black mb-6">
+                Digital craftsmanship.
+              </h1>
+            </TextReveal>
 
-          <TextReveal delay={300} className="w-full flex justify-center">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-normal tracking-tighter leading-[0.9] text-black mb-6 max-w-5xl">
-              Digital craftsmanship.
-            </h1>
-          </TextReveal>
+            <FadeIn delay={450} className="w-full flex justify-center md:justify-start">
+              <p className="text-lg md:text-xl text-gray-600 font-medium mb-8 max-w-lg">
+                Materials and textures for AAA-quality games.
+              </p>
+            </FadeIn>
 
-          <FadeIn delay={450} className="w-full flex justify-center">
-            <p className="text-lg md:text-xl text-gray-600 font-medium mb-8 max-w-2xl">
-              Materials and textures for AAA-quality games.
-            </p>
-          </FadeIn>
+            <FadeIn delay={600} className="w-full flex flex-col items-center md:items-start">
+              <p className="text-base leading-relaxed text-gray-700 font-medium mb-8 max-w-md">
+                Specialized in PBR texturing and material creation using Substance Painter.
+              </p>
+              <div className="flex gap-4">
+                <Button size="lg" className="rounded-full" asChild>
+                  <a href="#work">View Projects</a>
+                </Button>
+                <Button size="lg" variant="outline" className="rounded-full" asChild>
+                  <a href="#contact">Contact Me</a>
+                </Button>
+              </div>
+            </FadeIn>
+          </div>
 
-          <FadeIn delay={600} className="flex flex-col items-center text-center max-w-xl mx-auto mb-16 md:mb-20">
-            <p className="text-base leading-relaxed text-gray-700 font-medium mb-8">
-              Specialized in PBR texturing and material creation using Substance Painter.
-            </p>
-            <div className="flex gap-4">
-              <Button size="lg" className="rounded-full" asChild>
-                <a href="#work">View Projects</a>
-              </Button>
-              <Button size="lg" variant="outline" className="rounded-full" asChild>
-                <a href="#contact">Contact Me</a>
-              </Button>
-            </div>
-          </FadeIn>
+          {/* Large Image */}
+          <div className="w-full md:w-1/2 order-1 md:order-2">
+            <FadeIn delay={0} className="w-full">
+              <div className="relative rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-gray-900/10 bg-black">
+                <img src="/assets/MM4A1_Ronin.png" alt="Main Work" className="w-full h-auto object-cover" />
+              </div>
+            </FadeIn>
+          </div>
 
         </div>
       </section>
