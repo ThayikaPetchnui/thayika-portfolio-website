@@ -165,12 +165,6 @@ function App() {
 
               {/* Bottom: Image + Text */}
               <div className="flex flex-col md:flex-row gap-8 items-start">
-                <FadeIn delay={400} className="w-full md:w-48 shrink-0">
-                  <div className="aspect-[3/4] overflow-hidden rounded-sm bg-gray-200">
-                     <img src="/assets/MM4A1_Moonveil.png" alt="Detail" className="h-full w-full object-cover" />
-                  </div>
-                </FadeIn>
-                
                 <FadeIn delay={500} className="flex-1 max-w-lg pt-2">
                   <p className="text-lg leading-relaxed text-gray-700 font-medium mb-8 text-justify">
                     Specialized in photorealistic texturing and material creation using Substance Painter.
