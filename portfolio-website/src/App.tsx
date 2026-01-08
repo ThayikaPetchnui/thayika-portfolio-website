@@ -220,8 +220,21 @@ function App() {
           {/* Large Image */}
           <div className="w-full md:w-1/2 order-1 md:order-2">
             <FadeIn delay={0} className="w-full">
-              <div className="relative rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-gray-900/10 bg-black md:-translate-x-8">
-                <img src="/assets/MM4A1_Sunset.png" alt="Main Work" className="w-full h-auto object-cover" />
+              <div className="group [perspective:1000px] md:-translate-x-8 cursor-pointer">
+                <div className="relative w-full transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                  {/* Front */}
+                  <div className="relative [backface-visibility:hidden]">
+                    <div className="rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-gray-900/10 bg-black">
+                      <img src="/assets/MM4A1_Sunset.png" alt="Main Work Front" className="w-full h-auto object-cover" />
+                    </div>
+                  </div>
+                  {/* Back */}
+                  <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)]">
+                    <div className="h-full w-full rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-gray-900/10 bg-black">
+                      <img src="/assets/MM4A1_Moonveil.png" alt="Main Work Back" className="w-full h-full object-cover" />
+                    </div>
+                  </div>
+                </div>
               </div>
             </FadeIn>
           </div>
