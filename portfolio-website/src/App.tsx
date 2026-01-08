@@ -146,7 +146,7 @@ function App() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             
             {/* Left Column */}
-            <div className="lg:col-span-7 flex flex-col gap-12 md:gap-20">
+            <div className="lg:col-span-6 flex flex-col gap-12 md:gap-20">
               
               {/* Top: Heading */}
               <div>
@@ -183,7 +183,7 @@ function App() {
             </div>
 
             {/* Right Column: Large Image */}
-            <div className="lg:col-span-5 relative flex justify-center lg:self-center">
+            <div className="lg:col-span-6 relative flex justify-center lg:self-center">
               <FadeIn delay={300} className="w-full">
                 <div className="aspect-video w-full overflow-hidden rounded-sm bg-gray-200 shadow-2xl">
                   <img src="/assets/MM4A1_Ronin.png" alt="Main Work" className="h-full w-full object-cover" />
