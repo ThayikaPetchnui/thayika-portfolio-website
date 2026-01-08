@@ -171,6 +171,8 @@ function App() {
   const nextWork = () => setCurrentWorkIndex((prev) => (prev + 1) % FEATURED_ARTWORKS.length);
   const prevWork = () => setCurrentWorkIndex((prev) => (prev - 1 + FEATURED_ARTWORKS.length) % FEATURED_ARTWORKS.length);
 
+  const filteredGalleryImages = ALL_ARTWORKS.filter(art => selectedCategory === "All" || art.model === selectedCategory);
+
   return (
     <div className="min-h-screen bg-[#E5E3DF] text-slate-900 selection:bg-blue-100 selection:text-blue-900">
       <Navbar />
@@ -333,9 +335,7 @@ function App() {
               </div>
             </div>
             <div className="grid grid-cols-5 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-2 pb-12">
-              {ALL_ARTWORKS
-                .filter(art => selectedCategory === "All" || art.model === selectedCategory)
-                .map((art) => (
+              {filteredGalleryImages.map((art) => (
                 <div 
                   key={art.id} 
                   className="group relative aspect-square cursor-pointer overflow-hidden rounded-lg bg-gray-100 hover:shadow-md transition-all"
@@ -364,7 +364,7 @@ function App() {
           <Button 
             variant="ghost" 
             size="icon" 
-            className="absolute top-4 right-4 text-white hover:bg-white/20 hover:text-white rounded-full" 
+            className="absolute top-4 right-4 text-white hover:bg-white/20 hover:text-white rounded-full z-[80]" 
             onClick={(e) => {
               e.stopPropagation();
               setSelectedImage(null);
@@ -372,12 +372,63 @@ function App() {
           >
             <X className="h-8 w-8" />
           </Button>
-          <img 
-            src={selectedImage} 
-            alt="Full view" 
-            className="max-h-[90vh] max-w-full object-contain rounded-lg shadow-2xl" 
-            onClick={(e) => e.stopPropagation()} 
-          />
+
+          {(() => {
+             const images = isGalleryOpen ? filteredGalleryImages : FEATURED_ARTWORKS;
+             const currentIndex = images.findIndex(img => img.url === selectedImage);
+             
+             if (currentIndex === -1) {
+               return (
+                 <img 
+                   src={selectedImage} 
+                   alt="Full view" 
+                   className="max-h-[90vh] max-w-full object-contain rounded-lg shadow-2xl" 
+                   onClick={(e) => e.stopPropagation()} 
+                 />
+               );
+             }
+
+             const handleNext = (e: React.MouseEvent) => {
+               e.stopPropagation();
+               const nextIndex = (currentIndex + 1) % images.length;
+               setSelectedImage(images[nextIndex].url);
+             };
+
+             const handlePrev = (e: React.MouseEvent) => {
+               e.stopPropagation();
+               const prevIndex = (currentIndex - 1 + images.length) % images.length;
+               setSelectedImage(images[prevIndex].url);
+             };
+
+             return (
+               <>
+                 <Button
+                   variant="ghost"
+                   size="icon"
+                   className="absolute left-2 md:left-8 text-white hover:bg-white/20 hover:text-white rounded-full h-12 w-12 z-[80]"
+                   onClick={handlePrev}
+                 >
+                   <ChevronLeft className="h-8 w-8" />
+                 </Button>
+                 
+                 <img 
+                   src={selectedImage} 
+                   alt="Full view" 
+                   className="max-h-[90vh] max-w-full object-contain rounded-lg shadow-2xl transition-all duration-300" 
+                   onClick={(e) => e.stopPropagation()} 
+                 />
+
+                 <Button
+                   variant="ghost"
+                   size="icon"
+                   className="absolute right-2 md:right-8 text-white hover:bg-white/20 hover:text-white rounded-full h-12 w-12 z-[80]"
+                   onClick={handleNext}
+                 >
+                   <ChevronRight className="h-8 w-8" />
+                 </Button>
+               </>
+             )
+          })()}
         </div>
       )}
 
