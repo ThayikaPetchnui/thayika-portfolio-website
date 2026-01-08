@@ -421,16 +421,16 @@ function App() {
       </section>
 
       {/* CONTACT SECTION */}
-      <section id="contact" className="py-20 bg-[#404040] text-white">
+      <section id="contact" className="py-20">
         <div className="container mx-auto max-w-3xl text-center px-4">
           <h2 className="text-3xl font-semibold tracking-tight mb-8">Contact</h2>
           <div className="flex flex-col items-center justify-center gap-4">
-            <p className="text-xl text-white">
+            <p className="text-xl">
               Feel free to reach out to me via email:
             </p>
             <a 
               href="mailto:pethayika@gmail.com" 
-              className="inline-flex items-center gap-2 text-2xl md:text-3xl font-medium text-white hover:text-gray-200 hover:underline transition-colors"
+              className="inline-flex items-center gap-2 text-2xl md:text-3xl font-medium hover:text-gray-600 hover:underline transition-colors"
             >
               <Mail className="h-6 w-6 md:h-8 md:w-8" />
               pethayika@gmail.com
