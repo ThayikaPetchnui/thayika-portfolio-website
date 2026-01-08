@@ -380,21 +380,7 @@ function App() {
                 </div>
               </FadeIn>
 
-              {/* Substance Painter Icon */}
-              <FadeIn delay={500}>
-                <div className="flex justify-center md:justify-start">
-                  <div className="group flex flex-col items-center gap-3">
-                    <div className="h-20 w-20 overflow-hidden rounded-2xl shadow-xl shadow-green-200/50 transition-all duration-300 group-hover:scale-105 group-hover:shadow-green-300/50">
-                      <img 
-                        src="/adobe-substance-3d-painter-icon.webp" 
-                        alt="Substance Painter" 
-                        className="h-full w-full object-cover" 
-                      />
-                    </div>
-                    <span className="text-sm font-semibold text-gray-400 uppercase tracking-wider">Substance Painter</span>
-                  </div>
-                </div>
-              </FadeIn>
+              
             </div>
           </div>
         </div>
