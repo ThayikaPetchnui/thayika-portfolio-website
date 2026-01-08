@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, type ReactNode } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Mail, X, ChevronLeft, ChevronRight, Brush, Palette, Layers, Gamepad2 } from "lucide-react";
+import { ArrowRight, Mail, X, ChevronLeft, ChevronRight, Brush, Palette, Layers, Gamepad2, PaintBucket } from "lucide-react";
 
 // Simple fade-in animation component
 const FadeIn = ({ children, delay = 0, className = "" }: { children: ReactNode, delay?: number, className?: string }) => {
@@ -110,6 +110,7 @@ const SKILLS = [
   { name: "Substance 3D Painter", image: "/adobe-substance-3d-painter-icon.webp" },
   { name: "Photorealistic Texturing", icon: Brush, color: "text-pink-500" },
   { name: "Material Creation", icon: Palette, color: "text-purple-500" },
+  { name: "Asset Reskinning", icon: PaintBucket, color: "text-green-500" },
   { name: "PBR Workflows", icon: Layers, color: "text-blue-500" },
   { name: "Export for Game Engines", icon: Gamepad2, color: "text-orange-500" },
   { name: "Export for Unity", image: "/unity-logo-black-and-white.png" },
