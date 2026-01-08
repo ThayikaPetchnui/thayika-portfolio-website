@@ -320,18 +320,7 @@ function App() {
         <div className="container mx-auto max-w-6xl">
           <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
             
-            {/* Left Side: Profile Picture */}
-            <div className="w-full md:w-1/2 flex justify-center md:justify-end">
-              <div className="relative aspect-[3/4] w-full max-w-xs overflow-hidden rounded-2xl shadow-2xl ring-1 ring-gray-100">
-                <img 
-                  src="/thayika-profile-picture.png" 
-                  alt="Thayika" 
-                  className="h-full w-full object-cover"
-                />
-              </div>
-            </div>
-
-            {/* Right Side: Information */}
+            {/* Left Side: Information */}
             <div className="w-full md:w-1/2 text-center md:text-left">
               <FadeIn>
                 <div className="inline-flex items-center rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs font-medium text-gray-600 mb-6">
@@ -379,8 +368,17 @@ function App() {
                   ))}
                 </div>
               </FadeIn>
+            </div>
 
-              
+            {/* Right Side: Profile Picture */}
+            <div className="w-full md:w-1/2 flex justify-center md:justify-start">
+              <div className="relative aspect-[3/4] w-full max-w-xs overflow-hidden rounded-2xl shadow-2xl ring-1 ring-gray-100">
+                <img 
+                  src="/thayika-profile-picture.png" 
+                  alt="Thayika" 
+                  className="h-full w-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
