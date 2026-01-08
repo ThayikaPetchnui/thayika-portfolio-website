@@ -183,9 +183,9 @@ function App() {
             </div>
 
             {/* Right Column: Large Image */}
-            <div className="lg:col-span-5 relative">
-              <FadeIn delay={300}>
-                <div className="aspect-[4/5] lg:aspect-[3/4] w-full overflow-hidden rounded-sm bg-gray-200">
+            <div className="lg:col-span-5 relative flex justify-center lg:self-center">
+              <FadeIn delay={300} className="w-full">
+                <div className="aspect-video w-full overflow-hidden rounded-sm bg-gray-200 shadow-2xl">
                   <img src="/assets/MM4A1_Ronin.png" alt="Main Work" className="h-full w-full object-cover" />
                 </div>
               </FadeIn>
