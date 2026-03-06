@@ -30,8 +30,8 @@ export function Navbar() {
   return (
     <nav className="fixed top-0 z-50 w-full border-b border-white/10 bg-[#E5E3DF]/50 backdrop-blur-xl supports-[backdrop-filter]:bg-[#E5E3DF]/20">
       <div className="container mx-auto relative flex h-14 items-center px-4 md:px-8">
-        <div className="text-sm font-semibold tracking-tight">PORTFOLIO</div>
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-2">
+        <div className="mr-4 text-sm font-semibold tracking-tight">PORTFOLIO</div>
+        <div className="flex flex-1 justify-center gap-2">
           <NavLink href="#work">Work</NavLink>
           <NavLink href="#about">About</NavLink>
           <NavLink href="#contact">Contact</NavLink>
