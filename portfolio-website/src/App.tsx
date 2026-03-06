@@ -136,7 +136,7 @@ const SKILLS: ({ name: string; image: string } | { name: string; icon: LucideIco
   { name: "Asset Reskinning", icon: PaintBucket, color: "text-green-500" },
   { name: "PBR Workflows", icon: Layers, color: "text-blue-500" },
   { name: "Export for Game Engines", icon: Gamepad2, color: "text-orange-500" },
-  { name: "Export for Unity", image: "/unity-logo-black-and-white.png" },
+  { name: "Export for Unity", image: `${BASE}unity-logo-black-and-white.png` },
 ];
 
 function App() {
