@@ -151,12 +151,12 @@ function App() {
     // Set favicon
     const link = document.querySelector("link[rel~='icon']") as HTMLLinkElement | null;
     if (link) {
-      link.href = '/favicon.svg';
+      link.href = `${BASE}favicon.svg`;
       link.type = 'image/svg+xml';
     } else {
       const newLink = document.createElement('link');
       newLink.rel = 'icon';
-      newLink.href = '/favicon.svg';
+      newLink.href = `${BASE}favicon.svg`;
       newLink.type = 'image/svg+xml';
       document.head.appendChild(newLink);
     }
